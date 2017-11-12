@@ -44,6 +44,28 @@ They can't see the owner's profile page, edit and delete functions
 They can comment on the individual shop
 User will click on comment button, textbox will appear, they can write a new comment. They can edit or delete their comment.
 
-If they go directly to shops without logging in can see all info but not comment. Could have box saying log in or register to join the conversation. 
+If they go directly to shops without logging in can see all info but not comment. Could have box saying log in or register to join the conversation.
 
 Users can logout
+
+
+//Breaking down tasks
+
+Authentication split into back and front
+back end routes first - log-in and register
+Follow the express  auth lesson notes
+
+
+Then
+Someone writes tests for those end points
+
+
+at the same time
+front end authentication can begin - satellites, ui router  - view
+
+
+Then restful routes back end,
+testing
+at same time front end views can begin 
+
+Each resource to be split into two - back and front
