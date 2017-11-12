@@ -19,6 +19,6 @@ router.route('/login')
 //   .put(imageUpload, users.update)
 //   .delete(users.delete);
 
-router.all('/*', (req, res) => res.notFound());
+// router.all('/*', (req, res) => res.notFound());
 
 module.exports = router;
