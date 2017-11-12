@@ -1,4 +1,4 @@
-/* globals api, expect, describe, xdescribe, beforeEach, afterEach, it, xit */
+/* globals api, expect, describe, beforeEach, afterEach, it, xit */
 
 require('../spec_helper');
 const User = require('../../models/user');
