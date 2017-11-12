@@ -4,18 +4,18 @@ const { secret } = require('../config/environment');
 
 function authenticationsRegister(req, res, next){
   User
-    .create(req.body)
+    .create(req.body.user)
     .then(user => {
       const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '1hr' });
 
-      return res.status(201).json({
+      return res.status(200).json({
         message: `Hey there ${user.username}!`,
-        token
-        // user
+        token,
+        user
       });
     })
-    .catch(next);
-  // .catch(() => res.status(500).json({ message: 'Woops, something went wrong!' }));
+    // .catch(next);
+    .catch(() => res.status(500).json({ message: 'Woops, something went wrong!' }));
 }
 
 function authenticationsLogin(req, res, next){
@@ -30,12 +30,12 @@ function authenticationsLogin(req, res, next){
 
       return res.status(200).json({
         message: 'Good to see you again ${user.username}!',
-        token
-        // user
+        token,
+        user
       });
     })
-    .catch(next);
-  // .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
+    // .catch(next);
+    .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
 }
 
 
