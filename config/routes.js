@@ -4,15 +4,15 @@ const router  = express.Router();
 // const oauth = require('../controllers/oauth');
 // const secureRoute = require('../lib/secureRoute');
 const authentications = require('../controllers/authentications');
-// const users           = require('../controllers/users');
+const users           = require('../controllers/users');
 
 router.route('/register')
   .post(authentications.register);
 router.route('/login')
   .post(authentications.login);
 
-// router.route('/users')
-//   .get(users.index);
+router.route('/users')
+  .get(users.index);
 // router.route('/users/:id')
 //   .get(users.show)
 //   // .all(secureRoute)
