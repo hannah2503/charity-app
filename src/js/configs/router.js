@@ -28,7 +28,12 @@ function Router(
       url: '/login',
       templateUrl: 'js/views/authentications/login.html',
       controller: 'loginController as vm'
+    })
+    .state('usersIndex', {
+      url: '/users',
+      templateUrl: 'js/views/users/index.html',
+      controller: 'usersIndexController as vm'
     });
 
-  $urlRouterProvider.otherwise('/'); 
+  $urlRouterProvider.otherwise('/');
 }
