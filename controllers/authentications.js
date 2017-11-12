@@ -38,10 +38,6 @@ function authenticationsLogin(req, res){
     .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
 }
 
-
-
-
-
 module.exports = {
   register: authenticationsRegister,
   login: authenticationsLogin

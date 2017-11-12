@@ -13,13 +13,9 @@ router.route('/login')
 
 router.route('/users')
   .get(users.index);
-
-// router.route('/users/:id')
-//   .get(users.show)
-//   // .all(secureRoute)
-//   .put(imageUpload, users.update)
-//   .delete(users.delete);
-
-// router.all('/*', (req, res) => res.notFound());
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update)
+  .delete(users.delete);
 
 module.exports = router;
