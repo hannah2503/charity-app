@@ -44,6 +44,6 @@ They can't see the owner's profile page, edit and delete functions
 They can comment on the individual shop
 User will click on comment button, textbox will appear, they can write a new comment. They can edit or delete their comment.
 
-If they go directly to shops without logging in can see all info but not comment. Could have box saying log in or register to join the conversation. 
+If they go directly to shops without logging in can see all info but not comment. Could have box saying log in or register to join the conversation.
 
 Users can logout
