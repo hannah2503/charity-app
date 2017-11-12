@@ -61,9 +61,9 @@ describe('Authentications', function() {
           done();
         });
     });
-    it('should not register a user with no password', function() {
+    xit('should not register a user with no password', function() {
     });
-    it('should not register a user with no password confirmation', function() {
+    xit('should not register a user with no password confirmation', function() {
     });
   });
 
