@@ -1,6 +1,7 @@
 const express         = require('express');
 const morgan          = require('morgan');
 const bodyParser      = require('body-parser');
+const cors            = require('cors');
 const router          = require('./config/routes');
 const { db, port }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
@@ -14,6 +15,7 @@ mongoose.Promise      = require('bluebird');
 mongoose.connect(db[environment], { useMongoClient: true });
 
 app.use(morgan('dev'));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));

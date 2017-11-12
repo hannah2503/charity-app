@@ -1,5 +1,5 @@
 const User = require('../models/user');
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
 function authenticationsLogin(req, res){
@@ -7,7 +7,9 @@ function authenticationsLogin(req, res){
     .findOne({ email: req.body.email })
     .exec()
     .then(user => {
-      if (!user || !user.validatePassword(req.body.password)) res.status(401).json({ message: 'Unauthorized.' });
+      if (!user || !user.validatePassword(req.body.password)) {
+        return res.status(401).json({ message: 'Unauthorized.' });
+      }
       const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '1hr' });
 
       return res.status(200).json({
