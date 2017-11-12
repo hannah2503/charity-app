@@ -10,4 +10,5 @@ function usersIndexController(
   const vm = this;
 
   vm.users = User.query();
+  console.log(vm.users);
 }

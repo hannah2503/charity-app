@@ -2,7 +2,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
-function authenticationsRegister(req, res, next){
+function authenticationsRegister(req, res){
   User
     .create(req.body)
     .then(user => {
@@ -14,11 +14,11 @@ function authenticationsRegister(req, res, next){
         user
       });
     })
-    .catch(next);
-    // .catch(() => res.status(500).json({ message: 'Woops, something went wrong!' }));
+    // .catch(next);
+    .catch(() => res.status(500).json({ message: 'Woops, something went wrong!' }));
 }
 
-function authenticationsLogin(req, res, next){
+function authenticationsLogin(req, res){
   User
     .findOne({ email: req.body.email })
     .exec()
@@ -34,8 +34,8 @@ function authenticationsLogin(req, res, next){
         user
       });
     })
-    .catch(next);
-    // .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
+    // .catch(next);
+    .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
 }
 
 
