@@ -14,7 +14,7 @@ describe('Authentications', function() {
   //describe the POST request to the registration api
   describe('POST /api/register', function(){
   // it syntax with text explaining the task and followed by a function which posts, sets and sends sample log-in data based on the user model.
-    it('should register a user with the correct credentials', function  (done) {
+    it('should register a user with the correct credentials', function (done) {
       api
         .post('/api/register')
         .set('Accept', 'application/json')
@@ -37,11 +37,11 @@ describe('Authentications', function() {
           done();
         });
     });
-    xit('should not register a user with no email', function() {
+    it('should not register a user with no email', function() {
     });
-    xit('should not register a user with no password', function() {
+    it('should not register a user with no password', function() {
     });
-    xit('should not register a user with no password confirmation', function() {
+    it('should not register a user with no password confirmation', function() {
     });
   });
 
