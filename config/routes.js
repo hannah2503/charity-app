@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
-const imageUpload = require('../lib/imageUpload');
-const oauth = require('../controllers/oauth');
-const secureRoute = require('../lib/secureRoute');
+// const imageUpload = require('../lib/imageUpload');
+// const oauth = require('../controllers/oauth');
+// const secureRoute = require('../lib/secureRoute');
 const authentications = require('../controllers/authentications');
-const users           = require('../controllers/users');
+// const users           = require('../controllers/users');
 
 router.route('/register')
   .post(authentications.register);

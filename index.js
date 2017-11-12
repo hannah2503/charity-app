@@ -2,16 +2,16 @@ const express         = require('express');
 const morgan          = require('morgan');
 const bodyParser      = require('body-parser');
 const router          = require('./config/routes');
-const { db, port }    = require('./config/enviroment');
+const { db, port }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
 
 const app             = express();
-const enviroment      = app.get('env');
+const environment      = app.get('env');
 
 const mongoose        = require('mongoose');
 mongoose.Promise      = require('bluebird');
-mongoose.connect(db[enviroment], { useMongoClient: true });
+mongoose.connect(db[environment], { useMongoClient: true });
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
