@@ -1,8 +1,10 @@
 const express         = require('express');
 const morgan          = require('morgan');
 const bodyParser      = require('body-parser');
+const expressJWT           = require('express-jwt');
 const router          = require('./config/routes');
-const { db, port }    = require('./config/environment');
+const cors = require('cors');
+const { db, port, secret }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
 
@@ -13,10 +15,19 @@ const mongoose        = require('mongoose');
 mongoose.Promise      = require('bluebird');
 mongoose.connect(db[environment], { useMongoClient: true });
 
+app.use(cors());
 app.use(morgan('dev'));
+app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(`${__dirname}/public`));
+
+app.use('/api', expressJWT({ secret: secret })
+  .unless({
+    path: [
+      { url: '/api/register', methods: ['POST'] },
+      { url: '/api/login',    methods: ['POST'] }
+    ]
+  }));
 
 app.use(customResponses);
 app.use('/api', router);
