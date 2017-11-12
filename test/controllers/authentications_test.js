@@ -4,5 +4,5 @@ require('../spec_helper');
 // const User = require('../../models/user');
 
 describe('Authentications', function() {
-
+//HANNAH ADDED THIS FILE
 });
