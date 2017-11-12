@@ -60,6 +60,7 @@
     "express-jwt": "^5.3.0",
     "jsonwebtoken": "^8.1.0",
     "istanbul": "^0.4.5",
+    "jsonwebtoken": "^8.1.0",
     "mocha": "^4.0.1",
     "mongoose": "^4.8.6",
     "morgan": "^1.8.1",
@@ -99,5 +100,6 @@
     "jshint-stylish": "^2.2.1",
     "main-bower-files": "^2.13.1",
     "require-dir": "^0.3.1"
-  }
+  },
+  "repository": "git@github.com:camawjones/WDI_GROUP_PROJECT.git"
 }

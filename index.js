@@ -1,9 +1,9 @@
 const express         = require('express');
 const morgan          = require('morgan');
 const bodyParser      = require('body-parser');
-const expressJWT           = require('express-jwt');
+const cors            = require('cors');
 const router          = require('./config/routes');
-const cors = require('cors');
+const expressJWT      = require('expressJWT');
 const { db, port, secret }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
