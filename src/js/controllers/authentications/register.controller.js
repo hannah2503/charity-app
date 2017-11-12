@@ -20,13 +20,10 @@ function registerController(
     $auth
       .signup(vm.user)
       .then(() =>
-      $auth.login(vm.user))
+        $auth.login(vm.user))
       .then(() => {
-          currentUserService.getUser();
-          $state.go('usersIndex');
-        });
-      }
+        currentUserService.getUser();
+        $state.go('usersIndex');
+      });
   }
-
-
-  }
+}
