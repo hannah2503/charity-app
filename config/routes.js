@@ -3,8 +3,6 @@ const router  = express.Router();
 const imageUpload = require('../lib/imageUpload');
 // const oauth = require('../controllers/oauth');
 // const secureRoute = require('../lib/secureRoute');
-
-//need restful routes
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 
