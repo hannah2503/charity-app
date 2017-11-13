@@ -33,7 +33,12 @@ function Router(
       url: '/users',
       templateUrl: 'js/views/users/index.html',
       controller: 'usersIndexController as vm'
-    });
+    })
+    .state('shopsIndex', {
+      url: '/shops',
+      templateUrl: 'js/views/shops/index.html',
+      controller: 'shopsIndexController as vm'
+    })
 
   $urlRouterProvider.otherwise('/');
 }

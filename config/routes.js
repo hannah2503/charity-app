@@ -6,7 +6,6 @@ const secureRoute = require('../lib/secureRoute');
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 const shops           = require('../controllers/shops');
-
 router.route('/register')
   .post(authentications.register);
 router.route('/login')
