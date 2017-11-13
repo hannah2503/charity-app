@@ -3,7 +3,7 @@ const morgan          = require('morgan');
 const bodyParser      = require('body-parser');
 const cors            = require('cors');
 const router          = require('./config/routes');
-const expressJWT      = require('express-jwt');
+// const expressJWT      = require('express-jwt');
 const { db, port, secret }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
@@ -21,13 +21,13 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api', expressJWT({ secret: secret })
-  .unless({
-    path: [
-      { url: '/api/register', methods: ['POST'] },
-      { url: '/api/login',    methods: ['POST'] }
-    ]
-  }));
+// app.use('/api', expressJWT({ secret: secret })
+//   .unless({
+//     path: [
+//       { url: '/api/register', methods: ['POST'] },
+//       { url: '/api/login',    methods: ['POST'] }
+//     ]
+//   }));
 
 app.use(customResponses);
 app.use('/api', router);
