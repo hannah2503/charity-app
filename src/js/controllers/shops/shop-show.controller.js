@@ -8,15 +8,13 @@ function shopShowController(Shop, $stateParams, $state, User){
 
   vm.shop = Shop.get($stateParams);
 
-<<<<<<< HEAD
   vm.user = User.get($stateParams);
 
   vm.delete = () => {
-=======
+
   vm.delete = shopDelete;
 
   function shopDelete() {
->>>>>>> 8cf444cc8b1c66968c15612ad04f4f2cec2dba94
     Shop
       .remove({id: vm.shop._id})
       .$promise
@@ -49,4 +47,5 @@ function shopShowController(Shop, $stateParams, $state, User){
       });
   }
 
+  }; 
 }
