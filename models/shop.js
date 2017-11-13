@@ -27,7 +27,7 @@ const shopSchema = new mongoose.Schema({
   image: { type: String, required: true },
   clothesWanted: { type: String, required: true },
   clothesNotWanted: { type: String, required: true},
-  // createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
 });
 

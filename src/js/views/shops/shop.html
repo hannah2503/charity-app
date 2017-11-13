@@ -5,3 +5,16 @@
 
 <li ui-sref="/form">Edit This Shop</li>
 <li ui-sref="#">Delete This Shop</li>
+
+
+Comments
+<hr>
+<ul>
+  <li ng-repeat="comment in vm.shop.comments">{{ comment.content }}, {{ comment.createdBy }}</li>
+</ul>
+
+<form ng-submit="vm.handleNewComment()">
+  <label for="comments">Comment:</label>
+  <input type="text" ng-model="vm.comment.content">
+  <input type="submit">
+</form>

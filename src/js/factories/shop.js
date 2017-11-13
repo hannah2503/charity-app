@@ -10,6 +10,8 @@ function Shop(
   $resource,
   API){
   return $resource(`${API}/shops/:id`, { id: '@_id'}, {
-    'update': { method: 'PUT' }
+    'update': { method: 'PUT' },
+    'addComment': { url: `${API}/shops/:id/comments`, method: 'POST'}
+
   });
 }
