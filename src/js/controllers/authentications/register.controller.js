@@ -21,9 +21,9 @@ function registerController(
       .signup(vm.user)
       .then(() =>
         $auth.login(vm.user))
-      .then(() => {
+      .then(response => {
         currentUserService.getUser();
-        $state.go('userShow');
+        $state.go('userShow', { id: response.data.user._id });
       });
   }
 }

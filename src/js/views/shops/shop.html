@@ -3,14 +3,15 @@
 {{vm.shop.name}}
 {{vm.shop._id}}
 
-<button class="btn btn-default" ui-sref="shopEdit({ id: vm.shop._id })">Edit this shop</button>
+<p ng-if= "{{ vm.shop.createdBy == vm.user }}"><a ui-sref="shopEdit({ id: vm.shop._id })">Edit your shop</a></p>
 
 <button class="btn btn-default" ng-click="vm.delete(vm.shop)">Delete this shop</button>
 
 Comments
 <hr>
-<ul>
-  <li ng-repeat="comment in vm.shop.comments">{{ comment.content }}, {{ comment.createdBy }}</li>
+<ul ng-repeat="comment in vm.shop.comments">
+  <li>{{ comment.content }}, {{ comment.createdBy }}</li>
+  <li ng-if= "{{ comment.createdBy == vm.user }}"><a ui-sref="commentEdit">Edit your comment</a></li>
 </ul>
 
 <form ng-submit="vm.handleNewComment()">
