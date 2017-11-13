@@ -21,6 +21,18 @@ function shopsShow(req, res) {
     .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
+function shopsCreate(req, res, next) {
+  req.body.createdBy = req.user;
+
+  Shop
+    .create(req.body)
+    .then(() => res.redirect('/shops'))
+    .catch((err) => {
+      if(err.name === 'ValidationError') return res.badRequest(`/shops/${req.params.id}/edit`, err.toString());
+      next(err);
+    });
+}
+
 function shopsUpdate(req, res, next) {
   Shop
     // .findByIdAndUpdate(req.params.id, req.body.shop, { new: true, runValidators: true })
@@ -92,6 +104,7 @@ module.exports = {
   show: shopsShow,
   update: shopsUpdate,
   delete: shopsDelete,
+  new: shopsCreate,
   createComment: createCommentRoute,
   deleteComment: deleteCommentRoute
 };
