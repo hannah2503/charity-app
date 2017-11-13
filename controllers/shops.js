@@ -25,7 +25,6 @@ function shopsCreate(req, res) {
   req.body.createdBy = req.user;
 
   Shop
-    // .create(req.body.shop)
     .create(req.body)
     .then(shop => res.status(201).json(shop))
     .catch(err => res.status(500).json(err));
@@ -68,18 +67,13 @@ function createCommentRoute(req, res, next) {
     .then(shop => {
       if (!shop) return res.notFound();
 
-      req.body.createdBy = req.currentShop;
+      req.body.createdBy = req.user;
       shop.comments.push(req.body);
+      shop.save();
 
-      return shop.save();
+      return res.status(201).json(shop);
     })
-    .then(() =>
-      res.redirect(`/shops/${req.params.id}`))
-    .catch((err) => {
-      if (err.name === 'ValidationError') return res.badRequest(`/shops/${req.params.id}`,
-        err.toString());
-      next(err);
-    });
+    .catch(next);
 }
 
 function deleteCommentRoute(req, res, next) {
@@ -89,11 +83,11 @@ function deleteCommentRoute(req, res, next) {
     .then(shop => {
       if (!shop) return res.notFound();
       if (!shop.belongsTo(req.shop)) return res.unauthorized('You do not have permission to delete that resource');
-      shop.reviews.id(req.params.commentId).remove();
+      shop.comments.id(req.params.commentId).remove();
+      shop.save();
 
-      return shop.save();
+      return res.status(200).json({ message: 'comment was deleted.'});
     })
-    .then(shop => res.redirect(`/shops/${shop.id}`))
     .catch(next);
 }
 

@@ -45,6 +45,11 @@ function Router(
       templateUrl: 'js/views/shops/shop.html',
       controller: 'shopShowController as vm'
     })
+    .state('shopEdit',{
+      url: '/shops/:id/form',
+      templateUrl: 'js/views/shops/form.html',
+      controller: 'shopEditController as vm'
+    })
     .state('register', {
       url: '/register',
       templateUrl: 'js/views/authentications/register.html',

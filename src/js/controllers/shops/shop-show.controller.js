@@ -5,11 +5,10 @@ angular
 shopShowController.$inject = ['Shop','$stateParams', '$state'];
 function shopShowController(Shop, $stateParams, $state){
   const vm = this;
+
   vm.shop = Shop.get($stateParams);
-  console.log($state);
 
   vm.delete = () => {
-
     Shop
       .remove({id: vm.shop._id})
       .$promise
@@ -19,4 +18,13 @@ function shopShowController(Shop, $stateParams, $state){
     console.log( 'deleted');
   };
 
+  vm.handleNewComment = () => {
+    Shop
+      .addComment($stateParams, vm.comment)
+      .$promise
+      .then(data => {
+        vm.comment       = null;
+        vm.shop.comments = data.comments;
+      });
+  };
 }
