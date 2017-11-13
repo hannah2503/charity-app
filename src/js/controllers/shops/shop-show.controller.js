@@ -2,9 +2,21 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['$stateParams'];
-function shopShowController($stateParams){
+shopShowController.$inject = ['Shop','$stateParams', '$state'];
+function shopShowController(Shop, $stateParams, $state){
   const vm = this;
-  console.log(vm.shop[$stateParams.id]);
-  return vm.shop[$stateParams.id];
+  vm.shop = Shop.get($stateParams);
+  console.log($state);
+
+  vm.delete = () => {
+
+    Shop
+      .remove({id: vm.shop._id})
+      .$promise
+      .then(()=> {
+        $state.go('shopsIndex');
+      });
+    console.log( 'deleted');
+  };
+
 }

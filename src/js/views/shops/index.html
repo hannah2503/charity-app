@@ -7,3 +7,16 @@
 <li>Search Function Goes Here</li>
 <li>Search Results Also Here</li>
 </ul>
+
+
+<div class="row">
+  <div class="col-md-4" ng-repeat="shop in vm.shops">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title">{{ shop.name }}</h4>
+
+        <p>{{shop._id}}</p>
+      </div>
+    </div>
+  </div>
+</div>

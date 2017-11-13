@@ -1,6 +1,6 @@
 <h1>Create a Shop/Edit a Shop</h1>
 
-<form method="post">
+<form ng-submit="vm.submit(vm.shop)">
   <label for="name">Name:</label>
   <input type="text" name="name" value="Shop Name">
 
@@ -34,5 +34,5 @@
   <label for="unwanted">Unwanted:</label>
   <input type="unwanted" name="unwanted" value="unwanted items">
 
-  <button type="submit" name="button">Submit Shop Details</button>
+<li><input type="submit" name="submit"></li>
 </form>
