@@ -43,60 +43,60 @@ describe('User tests', () => {
     });
   });
 
-  describe('PUT /api/users/:id', () => {
-
-    it('should return a 201 response', done => {
-      api
-        .put('/api/users/:id')
-        .set('Accept', 'application/json')
-        .send({
-          user: {
-            userType: 'shop',
-            username: 'sam',
-            email: 'sam@sam.com',
-            password: 'password',
-            passwordConfirmation: 'password'
-          }
-        })
-        .expect(201, done);
-    });
-
-    it('should update a user', done => {
-      api
-        .put('/api/users/:id')
-        .set('Accept', 'application/json')
-        .send({
-          user: {
-            userType: 'shop',
-            username: 'sam',
-            email: 'sam@sam.com',
-            password: 'password',
-            passwordConfirmation: 'password'
-          }
-        })
-        .end((err, res) => {
-          const user = res.body;
-
-          expect(user)
-            .to.have.property('_id')
-            .and.to.be.a('string');
-
-          expect(user)
-            .to.have.property('username')
-            .and.to.be.a('string');
-
-          expect(user)
-            .to.have.property('userType')
-            .and.to.be.a('string');
-
-          expect(user)
-            .to.have.property('email')
-            .and.to.be.a('string');
-
-          done();
-        });
-    });
-  });
+  // describe('PUT /api/users/:id', () => {
+  //
+  //   it('should return a 201 response', done => {
+  //     api
+  //       .put(`/api/users/${user.id}`)
+  //       .set('Accept', 'application/json')
+  //       .send({
+  //         user: {
+  //           userType: 'shop',
+  //           username: 'sam',
+  //           email: 'sam@sam.com',
+  //           password: 'password',
+  //           passwordConfirmation: 'password'
+  //         }
+  //       })
+  //       .expect(201, done);
+  //   });
+  //
+  //   it('should update a user', done => {
+  //     api
+  //       .put('/api/users/:id')
+  //       .set('Accept', 'application/json')
+  //       .send({
+  //         user: {
+  //           userType: 'shop',
+  //           username: 'sam',
+  //           email: 'sam@sam.com',
+  //           password: 'password',
+  //           passwordConfirmation: 'password'
+  //         }
+  //       })
+  //       .end((err, res) => {
+  //         const user = res.body;
+  //
+  //         expect(user)
+  //           .to.have.property('_id')
+  //           .and.to.be.a('string');
+  //
+  //         expect(user)
+  //           .to.have.property('username')
+  //           .and.to.be.a('string');
+  //
+  //         expect(user)
+  //           .to.have.property('userType')
+  //           .and.to.be.a('string');
+  //
+  //         expect(user)
+  //           .to.have.property('email')
+  //           .and.to.be.a('string');
+  //
+  //         done();
+  //       });
+  //   });
+  // });
 
   describe('DELETE /api/users/:id', () => {
 
