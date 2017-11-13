@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/shop-db';
-mongoose.connect(dbURI);
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/wdip3-development';
+mongoose.connect(dbURI, { useMongoClient: true });
 
 const User = require('../models/user');
 const Shop = require('../models/shop');
@@ -58,8 +58,8 @@ User
         image: 'https://farm8.staticflickr.com/7391/9459072973_513584071c.jpg',
         clothesWanted: 'jeans, t-shirts, hats',
         clothesNotWanted: 'shoes',
-        createdBy: 'a',
-        comments: 'a'
+        // createdBy: 'a',
+        // comments: 'a'
       },{
         name: 'Cancer Research Highgate',
         address: {
@@ -75,8 +75,8 @@ User
         image: 'http://s3.amazonaws.com/ldc/large/2268/22686148.jpg',
         clothesWanted: 'jeans, t-shirts',
         clothesNotWanted: 'shoes, hats',
-        createdBy: 'a',
-        comments: 'a'
+        // createdBy: 'a',
+        // comments: 'a'
       }]);
   })
   .then((shops) => {

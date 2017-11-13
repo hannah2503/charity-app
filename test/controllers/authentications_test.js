@@ -27,16 +27,14 @@ describe('Authentications', function() {
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
-          user: {
-            userType: 'shop',
-            username: 'sam',
-            email: 'sam@sam.com',
-            password: 'password',
-            passwordConfirmation: 'password'
-          }
+          userType: 'shop',
+          username: 'sam',
+          email: 'sam@sam.com',
+          password: 'password',
+          passwordConfirmation: 'password'
         })
         .end((err, res) => {
-          expect(res.status).to.eq(200);
+          expect(res.status).to.eq(201);
           expect(res.body).to.be.a('object');
           expect(res.body.token).to.be.a('string');
           done();
@@ -48,60 +46,54 @@ describe('Authentications', function() {
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
-          user: {
-            userType: 'shop',
-            username: 'sam',
-            password: 'password',
-            passwordConfirmation: 'password'
-          }
+          userType: 'shop',
+          username: 'sam',
+          password: 'password',
+          passwordConfirmation: 'password'
         })
         .end((err, res) => {
-          expect(res.status).to.eq(400);
+          expect(res.status).to.eq(500);
           expect(res.body).to.be.a('object');
-          // expect(res.body.errors).to.eq('ValidationError: email: Path `email` is required.');
-          expect(res.body.message).to.eq('Bad Request');
+          expect(res.body.message).to.eq('Woops, something went wrong!');
           done();
         });
     });
+
     it('should not register a user with no password', function(done) {
       api
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
-          user: {
-            userType: 'shop',
-            username: 'sam',
-            email: 'sam@sam.com',
-            passwordConfirmation: 'password'
-          }
+          userType: 'shop',
+          username: 'sam',
+          email: 'sam@sam.com',
+          passwordConfirmation: 'password'
         })
         .end((err, res) => {
-          expect(res.status).to.eq(400);
+          expect(res.status).to.eq(500);
           expect(res.body).to.be.a('object');
-          expect(res.body.message).to.eq('Bad Request');
+          expect(res.body.message).to.eq('Woops, something went wrong!');
+          done();
+        });
+    });
+
+    it('should not register a user with no password confirmation', function(done) {
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          userType: 'shop',
+          username: 'sam',
+          email: 'sam@sam.com',
+          password: 'password'
+        })
+        .end((err, res) => {
+          expect(res.status).to.eq(500);
+          expect(res.body).to.be.a('object');
+          expect(res.body.message).to.eq('Woops, something went wrong!');
           done();
         });
     });
 
   });
-  it('should not register a user with no password confirmation', function(done) {
-    api
-      .post('/api/register')
-      .set('Accept', 'application/json')
-      .send({
-        user: {
-          userType: 'shop',
-          username: 'sam',
-          email: 'sam@sam.com',
-          password: 'password'
-        }
-      })
-      .end((err, res) => {
-        expect(res.status).to.eq(400);
-        expect(res.body).to.be.a('object');
-        expect(res.body.message).to.eq('Bad Request');
-        done();
-      });
-  });
-
 });
