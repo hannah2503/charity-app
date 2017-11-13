@@ -49,11 +49,12 @@ function Router(
       templateUrl: 'js/views/shops/shop.html',
       controller: 'shopShowController as vm'
     })
-    .state('shopCreate', {
-      url: '/shops/create',
-      templateUrl: 'js/views/shops/create.html',
+    //form for creating and editing a shop
+    .state('shopForm', {
+      url: '/shops/form',
+      templateUrl: 'js/views/shops/form.html',
       controller: 'shopCreateController as vm'
     });
-    
+
   $urlRouterProvider.otherwise('/');
 }
