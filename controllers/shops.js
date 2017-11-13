@@ -21,6 +21,15 @@ function shopsShow(req, res) {
     .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
+function shopsCreate(req, res) {
+  req.body.createdBy = req.user;
+
+  Shop
+    .create(req.body.shop)
+    .then(shop => res.status(201).json(shop))
+    .catch(err => res.status(500).json(err));
+}
+
 function shopsUpdate(req, res, next) {
   Shop
     // .findByIdAndUpdate(req.params.id, req.body.shop, { new: true, runValidators: true })
@@ -92,6 +101,7 @@ module.exports = {
   show: shopsShow,
   update: shopsUpdate,
   delete: shopsDelete,
+  create: shopsCreate,
   createComment: createCommentRoute,
   deleteComment: deleteCommentRoute
 };
