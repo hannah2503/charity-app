@@ -22,7 +22,7 @@ const shopSchema = new mongoose.Schema({
     country: { type: String, required: true }
   },
   email: { type: String, required: true, unique: true },
-  number: { type: Number, required: true, unique: true },
+  number: { type: String, required: true, unique: true },
   bio: { type: String, required: true },
   image: { type: String, required: true },
   clothesWanted: { type: String, required: true },
