@@ -12,8 +12,8 @@ function shopFormController(Shop, $state){
       .save(shop)
       .$promise
       .then(()=> {
-        console.log(shop);
         $state.go('shopsIndex');
       });
   };
+
 }

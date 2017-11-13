@@ -7,8 +7,9 @@ mongoose.connect(dbURI, { useMongoClient: true });
 const User = require('../models/user');
 const Shop = require('../models/shop');
 
-User.collection.drop();
 Shop.collection.drop();
+User.collection.drop();
+
 
 User
   .create([{
@@ -58,8 +59,13 @@ User
         image: 'https://farm8.staticflickr.com/7391/9459072973_513584071c.jpg',
         clothesWanted: 'jeans, t-shirts, hats',
         clothesNotWanted: 'shoes',
-        // createdBy: 'a',
-        // comments: 'a'
+        createdBy: users[2],
+        comments: [
+          {
+            content: 'found some really trendy things in this shop, a MUST go!',
+            createdBy: users[0]
+          }
+        ]
       },{
         name: 'Cancer Research Highgate',
         address: {
@@ -75,8 +81,13 @@ User
         image: 'http://s3.amazonaws.com/ldc/large/2268/22686148.jpg',
         clothesWanted: 'jeans, t-shirts',
         clothesNotWanted: 'shoes, hats',
-        // createdBy: 'a',
-        // comments: 'a'
+        createdBy: users[3],
+        comments: [
+          {
+            content: 'great shop',
+            createdBy: users[0]
+          }
+        ]
       }]);
   })
   .then((shops) => {
