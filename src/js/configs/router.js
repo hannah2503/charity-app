@@ -37,11 +37,7 @@ function Router(
     })
     .state('userShow', {
       url: '/users/:id',
-<<<<<<< HEAD
       templateUrl: 'js/views/users/show.html',
-=======
-      templateUrl: 'js/views/shops/show.html',
->>>>>>> 8cf444cc8b1c66968c15612ad04f4f2cec2dba94
       controller: 'userShowController as vm'
     })
     .state('shopShow',{
