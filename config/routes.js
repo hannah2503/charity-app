@@ -19,7 +19,8 @@ router.route('/users/:id')
   .delete(users.delete);
 
 router.route('/shops')
-  .get(shops.index);
+  .get(shops.index)
+  .post(shops.create);
 router.route('/shops/:id')
   .get(shops.show)
   .put(shops.update)

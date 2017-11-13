@@ -93,36 +93,34 @@ describe('Shop tests', () => {
     });
     it('should create a shop', done => {
       api
-      .post('/api/shops')
-      .set('Accept', 'application/json')
-      .send({
-      shop: {
-        name: 'Catriona',
-        address: {
-          line1: '260 Ability Place',
-          city: 'London',
-          postcode: 'E14 9DF',
-          country: 'UK'
-        },
-        email: 'odwyercatriona@gmail.com',
-        number: '072432676427',
-        bio: 'blah blah',
-        image: 'http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-11/256/shop-icon.png',
-        clothesWanted: 'tee-shirts',
-        clothesNotWanted: 'jeans'
-      }
-    })
-    .end((err, res) => {
-      const shop = res.body;
+        .post('/api/shops')
+        .set('Accept', 'application/json')
+        .send({
+          shop: {
+            name: 'Catriona',
+            address: {
+              line1: '260 Ability Place',
+              city: 'London',
+              postcode: 'E14 9DF',
+              country: 'UK'
+            },
+            email: 'la@gmail.com',
+            number: '072432676427',
+            bio: 'blah blah',
+            image: 'http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-11/256/shop-icon.png',
+            clothesWanted: 'tee-shirts',
+            clothesNotWanted: 'jeans'
+          }
+        })
+        .end((err, res) => {
+          const shop = res.body;
 
-      expect(shop)
-        .to.have.property('id')
-        .and.to.be.a('string');
+          expect(shop)
+            .to.have.property('email')
+            .and.to.be.a('string');
 
-        done();
-    })
-    })
-  }); 
+          done();
+        });
+    });
   });
-
 });
