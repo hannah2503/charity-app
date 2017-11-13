@@ -5,7 +5,7 @@ angular
 shopFormController.$inject  = ['Shop', '$state'];
 function shopFormController(Shop, $state){
   const vm = this;
-
+  vm.title = 'Add a Shop';
   vm.submit = shop =>  {
     console.log('submitted shop!');
     Shop
