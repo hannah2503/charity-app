@@ -10,8 +10,13 @@
 Comments
 <hr>
 <ul>
-  <li ng-repeat="comment in vm.shop.comments">{{ comment.content }}, {{ comment.createdBy }}</li>
+  <li ng-repeat="comment in vm.shop.comments">
+    <p>{{ comment.content }}, {{ comment.createdBy.username }}, {{comment._id}}</p>
+    <button ng-click="vm.deleteComment(comment)">Delete</button>
+    <!-- <button ng-click="comment.deleteComment({ id: comment._id })">Delete</button> -->
+  </li>
 </ul>
+
 
 <form ng-submit="vm.handleNewComment()">
   <label for="comments">Comment:</label>

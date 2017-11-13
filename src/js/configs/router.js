@@ -37,12 +37,12 @@ function Router(
     })
     .state('userShow', {
       url: '/users/:id',
-      templateUrl: 'js/views/shops/profile.html',
+      templateUrl: 'js/views/shops/show.html',
       controller: 'userShowController as vm'
     })
     .state('shopShow',{
       url: '/shops/:id',
-      templateUrl: 'js/views/shops/shop.html',
+      templateUrl: 'js/views/shops/show.html',
       controller: 'shopShowController as vm'
     })
     .state('shopEdit',{

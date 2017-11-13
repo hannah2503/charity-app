@@ -19,7 +19,7 @@ function googleMap($window) {
         center: mapCenter
       });
 
-      const infoWindow = new $window.google.maps.InfoWindow;
+      const infoWindow = new $window.google.maps.InfoWindow();
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
