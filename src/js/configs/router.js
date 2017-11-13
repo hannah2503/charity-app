@@ -53,7 +53,7 @@ function Router(
     .state('shopForm', {
       url: '/shops/form',
       templateUrl: 'js/views/shops/form.html',
-      controller: 'shopCreateController as vm'
+      controller: 'shopFormController as vm'
     });
 
   $urlRouterProvider.otherwise('/');
