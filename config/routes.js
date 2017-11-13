@@ -5,6 +5,7 @@ const router  = express.Router();
 // const secureRoute = require('../lib/secureRoute');
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
+const shops           = require('../controllers/shops');
 
 router.route('/register')
   .post(authentications.register);
@@ -17,5 +18,12 @@ router.route('/users/:id')
   .get(users.show)
   .put(users.update)
   .delete(users.delete);
+
+router.route('/shops')
+  .get(shops.index);
+router.route('/shops/:id')
+  .get(shops.show)
+  .put(shops.update)
+  .delete(shops.delete);
 
 module.exports = router;
