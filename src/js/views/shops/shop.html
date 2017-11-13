@@ -3,5 +3,6 @@
 {{vm.shop.name}}
 {{vm.shop._id}}
 
-<li ui-sref="/form">Edit This Shop</li>
-<li ui-sref="#">Delete This Shop</li>
+<button class="btn btn-default" ui-sref="shopEdit({ id: vm.shop._id })">Edit this shop</button>
+
+<button class="btn btn-default" ng-click="vm.delete(vm.shop)">Delete this shop</button>
