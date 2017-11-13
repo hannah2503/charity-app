@@ -34,11 +34,26 @@ function Router(
       templateUrl: 'js/views/users/index.html',
       controller: 'usersIndexController as vm'
     })
+    .state('userShow', {
+      url: '/users/:id',
+      templateUrl: 'js/views/shops/profile.html',
+      controller: 'userShowController as vm'
+    })
     .state('shopsIndex', {
       url: '/shops',
       templateUrl: 'js/views/shops/index.html',
       controller: 'shopsIndexController as vm'
     })
-
+    .state('shopShow',{
+      url: '/shops/:id',
+      templateUrl: 'js/views/shops/shop.html',
+      controller: 'shopShowController as vm'
+    })
+    .state('shopCreate', {
+      url: '/shops/create',
+      templateUrl: 'js/views/shops/create.html',
+      controller: 'shopCreateController as vm'
+    });
+    
   $urlRouterProvider.otherwise('/');
 }
