@@ -25,7 +25,7 @@ function shopsCreate(req, res) {
   req.body.createdBy = req.user;
 
   Shop
-    .create(req.body.shop)
+    .create(req.body)
     .then(shop => res.status(201).json(shop))
     .catch(err => res.status(500).json(err));
 }
