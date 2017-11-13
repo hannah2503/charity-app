@@ -3,4 +3,4 @@ angular
     'ui.router',
     'ngResource',
     'satellizer'
-  ]); 
+  ]);
