@@ -12,14 +12,16 @@ function googleMap($window) {
     template: '<div class="google-map"></div>',
     link(scope, element) {
       const mapCenter = new $window.google.maps.LatLng(51.5, -0.07);
-
+      // let text;
 
       const map = new $window.google.maps.Map(element[0], {
         zoom: 15,
         center: mapCenter
       });
 
-      const infoWindow = new $window.google.maps.InfoWindow();
+      var infowindow = new $window.google.maps.InfoWindow();
+
+      // const infoWindow = new $window.google.maps.InfoWindow();
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -28,16 +30,18 @@ function googleMap($window) {
             lng: position.coords.longitude
           };
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
-          infoWindow.open(map);
+          // infoWindow.setPosition(pos);
+          // infoWindow.setContent('Location found.');
+          // infoWindow.open(map);
           map.setCenter(pos);
         }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
+          handleLocationError(true, map.getCenter());
+          // handleLocationError(true, infoWindow, map.getCenter());
         });
       } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        // handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(false, map.getCenter());
       }
 
 
@@ -71,7 +75,45 @@ function googleMap($window) {
           position: new $window.google.maps.LatLng(data.geometry.location.lat(), data.geometry.location.lng()),
           map: map
         });
+
+        marker.addListener('click', () => {
+          infowindow = new $window.google.maps.InfoWindow({
+            content: `
+            <div class="infowindow">
+              <h3>${data.name}</h3>
+              <p><strong>${data.formatted_address}</strong></p>
+            </div>`
+          });
+
+          createInfoWindow(marker, data);
+        });
       }
+
+      var currWindow = false;
+
+      function createInfoWindow(marker) {
+        console.log('im hit');
+
+        if(currWindow) currWindow.close();
+
+        currWindow = infowindow;
+
+        infowindow.open(map, marker);
+      }
+
+        // var infowindow = new $window.google.maps.InfoWindow();
+        //
+        // function (place) {
+        // $window.google.maps.event.addListener(marker, 'click', function() {
+        //   infowindow.setContent('<div>'place.formatted_address'</div>');
+        //       infowindow.open(map, this);
+        //     });
+        //   }
+
+
+
+
+
     }
   };
 }
