@@ -21,7 +21,7 @@ function loginController(
       .login(vm.user)
       .then(() => {
         currentUserService.getUser();
-        $state.go('usersIndex');
+        $state.go('userShow');
       });
   }
 }
