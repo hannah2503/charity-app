@@ -21,6 +21,7 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
 app.use('/api', expressJWT({ secret: secret })
   .unless({
     path: [
@@ -29,6 +30,15 @@ app.use('/api', expressJWT({ secret: secret })
       { url: '/api/shops',    methods: ['GET'] }
     ]
   }));
+=======
+// app.use('/api', expressJWT({ secret: secret })
+//   .unless({
+//     path: [
+//       { url: '/api/register', methods: ['POST'] },
+//       { url: '/api/login',    methods: ['POST'] }
+//     ]
+//   }));
+>>>>>>> 8cf444cc8b1c66968c15612ad04f4f2cec2dba94
 
 app.use(customResponses);
 app.use('/api', router);
