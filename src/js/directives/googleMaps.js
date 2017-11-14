@@ -15,7 +15,8 @@ function googleMap($window) {
 
       const map = new $window.google.maps.Map(element[0], {
         zoom: 15,
-        center: mapCenter
+        center: mapCenter,
+        radius: 5000
       });
 
       var infowindow = new $window.google.maps.InfoWindow();
@@ -43,39 +44,43 @@ function googleMap($window) {
         infoWindow.open(map);
       }
 
-      const request = {
-        location: mapCenter,
-        radius: '500',
-        query: 'charity shop'
-      };
-
-      const service = new $window.google.maps.places.PlacesService(map);
-      service.textSearch(request, callback);
-
+      // const request = {
+      //   location: mapCenter,
+      //   radius: '1000'
+      //   // query: 'charity shop'
+      // };
+      //
+      // // const service = new $window.google.maps.places.PlacesService(map);
+      // // service.textSearch(request, callback);
+      // 
       function callback(results, status) {
         if (status === $window.google.maps.places.PlacesServiceStatus.OK) {
-          results.forEach(result => {
-            createMarker(result);
+          results.forEach(shop => {
+            createMarker(shop);
           });
         }
       }
 
-      function createMarker(data) {
+
+      function createMarker(shop) {
+        const latLng = {lat: shop.latitude, lng: shop.longitude };
         const marker = new $window.google.maps.Marker({
-          position: new $window.google.maps.LatLng(data.geometry.location.lat(), data.geometry.location.lng()),
+          position: latLng,
           map: map
         });
+
 
         marker.addListener('click', () => {
           infowindow = new $window.google.maps.InfoWindow({
             content: `
             <div class="infowindow">
-              <h3>${data.name}</h3>
-              <p><strong>${data.formatted_address}</strong></p>
+              <h3>${shop.name}</h3>
+              <p><strong>${shop.clothesWanted}</strong></p>
+              <p><strong>${shop.clothesNotWanted}</strong></p>
             </div>`
           });
 
-          createInfoWindow(marker, data);
+          createInfoWindow(marker, shop);
         });
       }
 
