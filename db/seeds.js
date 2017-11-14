@@ -53,6 +53,8 @@ User
           postcode: 'N8 8TD',
           country: 'UK'
         },
+        longitude: '-0.124593968946767',
+        latitude: '51.5807897272138',
         email: 'oxfam@oxfam.com',
         number: '020 8347 7942',
         bio: 'charity shop with lots of things in it',
@@ -75,6 +77,8 @@ User
           postcode: 'N6 5HX',
           country: 'UK'
         },
+        longitude: '-0.148043912362248',
+        latitude: '51.5709557851283',
         email: 'cr@cr.com',
         number: '020 8341 6330',
         bio: 'charity shop with lots of things in it',
