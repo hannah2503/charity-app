@@ -1,6 +1,6 @@
 angular
   .module('charityApp')
-  .controller('shopEditController',   shopEditController);
+  .controller('shopEditController', shopEditController);
 
 shopEditController.$inject = ['Shop', '$stateParams','$state'];
 
@@ -14,8 +14,8 @@ function shopEditController(Shop, $stateParams, $state){
       .update({id: shop._id}, shop)
       .$promise
       .then((shop)=> {
+
         $state.go('shopShow', {id: shop._id});
       });
   };
-
 }
