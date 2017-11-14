@@ -2,11 +2,12 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['Shop','$stateParams', '$state'];
-function shopShowController(Shop, $stateParams, $state){
+shopShowController.$inject = ['Shop','$stateParams', '$state', '$auth'];
+function shopShowController(Shop, $stateParams, $state, $auth){
   const vm = this;
 
   vm.shop = Shop.get($stateParams);
+  vm.currentUserId = $auth.getPayload().userId;
 
   vm.delete = shopDelete;
   vm.handleNewComment = commentCreate;
@@ -32,10 +33,9 @@ function shopShowController(Shop, $stateParams, $state){
 
   // vm.deleteComment = commentsDelete;
   //
-  // function commentsDelete(comment){
-  //   console.log(comment);
+  // function commentsDelete(){
   //   Shop
-  //     .deleteComment({id: $stateParams.id, commentId: comment._id})
+  //     .deleteComment($stateParams, vm.comment)
   //     .$promise
   //     .then(() => {
   //       console.log('delete button clicked!');

@@ -25,4 +25,11 @@ function loginController(
         $state.go('userShow', { id: response.data.user._id });
       });
   }
+
+  vm.logout = logout;
+
+  function logout() {
+    $auth.logout();
+    $state.go('login');
+  }
 }
