@@ -9,7 +9,7 @@ Shop.$inject = [
 function Shop(
   $resource,
   API){
-  return $resource(`${API}/shops/:id`, { id: '@_id'}, {
+  return $resource(`${API}/shops/:id/`, { id: '@_id'}, {
     'update': { method: 'PUT' },
     'addComment': { url: `${API}/shops/:id/comments`, method: 'POST'},
     'deleteComment': { url: `${API}/shops/:id/comments/:commentId`, method: 'DELETE'}

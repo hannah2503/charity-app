@@ -8,7 +8,7 @@ const { db, port, secret }    = require('./config/environment');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
 
-const app             = express();
+const app              = express();
 const environment      = app.get('env');
 
 const mongoose        = require('mongoose');

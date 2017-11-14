@@ -33,19 +33,19 @@ function shopsCreate(req, res) {
 
 function shopsUpdate(req, res, next) {
   Shop
-    .findByIdAndUpdate(req.params.id, req.body.shop, { new: true, runValidators: true })
-    .exec()
-    .then(shop => {
-      if (!shop) return res.status(404).json({ message: 'Shop not found.' });
-      return res.status(200).json({ shop });
+    // .findByIdAndUpdate(req.params.id, req.body.shop, { new: true, runValidators: true })
+    // .exec()
+    // .then(shop => {
+    //   if (!shop) return res.status(404).json({ message: 'Shop not found.' });
+    //   return res.status(200).json({ shop });
     // })
     // .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
-    // .findById(req.params.id)
-    // .exec()
-    // .then((shop) => {
-    //   if(!shop) return res.redirect();
-    //   if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
-    //   return res.render('shops/edit', { shop });
+    .findByIdAndUpdate(req.params.id, req.body)
+    .exec()
+    .then((shop) => {
+      // if(!shop) return res.status(404).json({ message: 'Shop not found.' });
+      // if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
+      return res.status(200).json(shop);
     })
     .catch(next);
 }
