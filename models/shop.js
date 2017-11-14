@@ -21,8 +21,8 @@ const shopSchema = new mongoose.Schema({
     postcode: { type: String, required: true },
     country: { type: String, required: true }
   },
-  longitude: {type: String, required: true},
-  latitude: {type: String, required: true},
+  // longitude: {type: String, required: true},
+  // latitude: {type: String, required: true},
   email: { type: String, required: true, unique: true },
   number: { type: String, required: true, unique: true },
   bio: { type: String, required: true },

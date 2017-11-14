@@ -21,7 +21,6 @@ function loginController(
       .login(vm.user)
       .then(response => {
         currentUserService.getUser();
-
         $state.go('userShow', { id: response.data.user._id });
       });
   }
