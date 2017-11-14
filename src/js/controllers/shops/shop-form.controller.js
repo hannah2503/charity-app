@@ -7,9 +7,9 @@ shopFormController.$inject  = ['Shop', '$state'];
 function shopFormController(Shop, $state){
   const vm = this;
   vm.title = 'Add a Shop';
-  vm.submit = shopCreate;
 
-  function shopCreate(shop){
+
+  vm.submit = shop => {
     console.log('submitted shop!');
     Shop
       .save(shop)
@@ -17,6 +17,18 @@ function shopFormController(Shop, $state){
       .then(()=> {
         $state.go('shopsIndex');
       });
-  }
 
+  };
 }
+
+// vm.submit = shopCreate;
+//
+// function shopCreate(shop){
+//   console.log('submitted shop!');
+//   Shop
+//     .save(shop)
+//     .$promise
+//     .then(()=> {
+//       $state.go('shopsIndex');
+//     });
+//
