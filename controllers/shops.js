@@ -40,13 +40,12 @@ function shopsUpdate(req, res, next) {
     //   return res.status(200).json({ shop });
     // })
     // .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
-    .findById(req.params.id)
+    .findByIdAndUpdate(req.params.id, req.body)
     .exec()
     .then((shop) => {
-      if(!shop) return res.redirect();
-      if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
+      // if(!shop) return res.status(404).json({ message: 'Shop not found.' });
+      // if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
       return res.status(200).json(shop);
-      // return res.render('shops/edit', { shop });
     })
     .catch(next);
 }
