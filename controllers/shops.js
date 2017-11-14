@@ -45,6 +45,7 @@ function shopsUpdate(req, res, next) {
     .then((shop) => {
       if(!shop) return res.redirect();
       if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
+      return res.status(200).json(shop);
       // return res.render('shops/edit', { shop });
     })
     .catch(next);

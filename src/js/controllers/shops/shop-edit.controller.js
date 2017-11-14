@@ -17,5 +17,4 @@ function shopEditController(Shop, $stateParams, $state){
         $state.go('shopShow', {id: shop._id});
       });
   };
-
 }
