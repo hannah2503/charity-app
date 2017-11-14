@@ -23,7 +23,7 @@ function shopsShow(req, res) {
 
 function shopsCreate(req, res) {
   console.log('hitting');
-  req.body.createdBy = req.user;
+  req.body.createdBy = req.user.userId;
 
   Shop
     .create(req.body)
