@@ -8,9 +8,8 @@ function shopShowController(Shop, $stateParams, $state){
 
   vm.shop = Shop.get($stateParams);
 
-  vm.delete = () => {
-
   vm.delete = shopDelete;
+  vm.handleNewComment = commentCreate;
 
   function shopDelete() {
     Shop
@@ -19,31 +18,29 @@ function shopShowController(Shop, $stateParams, $state){
       .then(()=> {
         $state.go('shopsIndex');
       });
-    console.log( 'deleted');
   }
 
-  vm.handleNewComment = () => {
+  function commentCreate() {
     Shop
       .addComment($stateParams, vm.comment)
       .$promise
       .then(data => {
-        vm.comment = null;
+        vm.comment = {};
         vm.shop.comments = data.comments;
-      });
-  };
-
-  vm.deleteComment = commentsDelete;
-
-  function commentsDelete(comment){
-    console.log(comment);
-    Shop
-      .deleteComment({id: $stateParams.id, commentId: comment._id})
-      .$promise
-      .then(() => {
-        console.log('delete button clicked!');
-        Shop.query();
       });
   }
 
-  };
+  // vm.deleteComment = commentsDelete;
+  //
+  // function commentsDelete(comment){
+  //   console.log(comment);
+  //   Shop
+  //     .deleteComment({id: $stateParams.id, commentId: comment._id})
+  //     .$promise
+  //     .then(() => {
+  //       console.log('delete button clicked!');
+  //       Shop.query();
+  //     });
+  // }
+
 }
