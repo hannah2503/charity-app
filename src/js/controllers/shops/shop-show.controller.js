@@ -2,13 +2,11 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['Shop','$stateParams', '$state', 'User'];
-function shopShowController(Shop, $stateParams, $state, User){
+shopShowController.$inject = ['Shop','$stateParams', '$state'];
+function shopShowController(Shop, $stateParams, $state){
   const vm = this;
 
   vm.shop = Shop.get($stateParams);
-
-  vm.user = User.get($stateParams);
 
   vm.delete = () => {
 
@@ -47,5 +45,5 @@ function shopShowController(Shop, $stateParams, $state, User){
       });
   }
 
-  }; 
+  };
 }

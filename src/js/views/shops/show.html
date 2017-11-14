@@ -12,11 +12,11 @@ Comments
 <ul>
   <li ng-repeat="comment in vm.shop.comments">
     <p>{{ comment.content }}, {{ comment.createdBy.username }}, {{comment._id}}</p>
-    <li ng-if= "{{ comment.createdBy == vm.user }}"><a ui-sref="commentEdit">Edit your comment</a></li>
     <button ng-click="vm.deleteComment(comment)">Delete</button>
-    <!-- <button ng-click="comment.deleteComment({ id: comment._id })">Delete</button> -->
   </li>
 </ul>
+  <!-- <button ng-click="comment.deleteComment({ id: comment._id })">Delete</button> -->
+  <!-- <li ng-if= "{{ comment.createdBy == vm.user }}"><a ui-sref="commentEdit">Edit your comment</a></li> -->
 
 
 <form ng-submit="vm.handleNewComment()">
