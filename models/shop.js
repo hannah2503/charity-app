@@ -8,8 +8,8 @@ const commentSchema = new mongoose.Schema({
 });
 
 commentSchema.methods.belongsTo = function commentBelongsTo(user) {
-  if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
-  return user.id === this.createdBy.toString();
+  if(typeof this.createdBy._id === 'string') return this.createdBy._id === user._id;
+  return user._id === this.createdBy.toString();
 };
 
 const shopSchema = new mongoose.Schema({
@@ -32,8 +32,8 @@ const shopSchema = new mongoose.Schema({
 });
 
 shopSchema.methods.belongsTo = function shopBelongsTo(user) {
-  if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
-  return user.id === this.createdBy.toString();
+  if(typeof this.createdBy._id === 'string') return this.createdBy._id === user._id;
+  return user._id === this.createdBy.toString();
 };
 
 module.exports = mongoose.model('Shop', shopSchema);

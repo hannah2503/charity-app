@@ -2,11 +2,12 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['Shop','$stateParams', '$state'];
-function shopShowController(Shop, $stateParams, $state){
+shopShowController.$inject = ['Shop','$stateParams', '$state', '$auth'];
+function shopShowController(Shop, $stateParams, $state, $auth){
   const vm = this;
 
   vm.shop = Shop.get($stateParams);
+  vm.currentUserId = $auth.getPayload().userId;
 
   vm.delete = shopDelete;
   vm.handleNewComment = commentCreate;

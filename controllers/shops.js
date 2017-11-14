@@ -22,13 +22,13 @@ function shopsShow(req, res) {
 }
 
 function shopsCreate(req, res) {
-  console.log('hitting');
-  req.body.createdBy = req.user;
+  // console.log('hitting');
+  req.body.createdBy = req.user.userId;
 
   Shop
     .create(req.body)
     .then(shop => res.status(201).json(shop))
-    .catch(err => res.status(500).json(err));
+    .catch(err => console.log(err));
 }
 
 function shopsUpdate(req, res, next) {
