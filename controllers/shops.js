@@ -33,18 +33,9 @@ function shopsCreate(req, res) {
 
 function shopsUpdate(req, res, next) {
   Shop
-    // .findByIdAndUpdate(req.params.id, req.body.shop, { new: true, runValidators: true })
-    // .exec()
-    // .then(shop => {
-    //   if (!shop) return res.status(404).json({ message: 'Shop not found.' });
-    //   return res.status(200).json({ shop });
-    // })
-    // .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
     .findByIdAndUpdate(req.params.id, req.body)
     .exec()
     .then((shop) => {
-      // if(!shop) return res.status(404).json({ message: 'Shop not found.' });
-      // if(!shop.belongsTo(req.user)) return res.unauthorized(`/shops/${shop.id}`, 'You do not have permission to edit this shop');
       return res.status(200).json(shop);
     })
     .catch(next);
@@ -81,16 +72,18 @@ function deleteCommentRoute(req, res, next) {
   Shop
     .findById(req.params.id)
     .exec()
-    .then(shop => {
+    .then((shop) => {
       if (!shop) return res.notFound();
-      if (!shop.belongsTo(req.shop)) return res.unauthorized('You do not have permission to delete that resource');
-      shop.comments.id(req.params.commentId).remove();
+      const comment = shop.comments.id(req.params.commentId);
+      comment.remove();
       shop.save();
 
-      return res.status(200).json({ message: 'comment was deleted.'});
+      return res.status(200).json({ message: 'comment was successfully deleted.'});
     })
     .catch(next);
 }
+
+
 
 module.exports = {
   index: shopsIndex,
