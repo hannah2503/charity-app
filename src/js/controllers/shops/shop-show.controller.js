@@ -11,6 +11,7 @@ function shopShowController(Shop, $stateParams, $state, $auth){
 
   vm.delete = shopDelete;
   vm.handleNewComment = commentCreate;
+  vm.commentDelete = commentDelete;
 
   function shopDelete() {
     Shop
@@ -31,16 +32,13 @@ function shopShowController(Shop, $stateParams, $state, $auth){
       });
   }
 
-  // vm.deleteComment = commentsDelete;
-  //
-  // function commentsDelete(){
-  //   Shop
-  //     .deleteComment($stateParams, vm.comment)
-  //     .$promise
-  //     .then(() => {
-  //       console.log('delete button clicked!');
-  //       Shop.query();
-  //     });
-  // }
-
+  function commentDelete(){
+    console.log('delete hit');
+    Shop
+      .deleteComment({id: vm.shop._id, commentId: vm.comment._id})
+      .$promise
+      .then(() => {
+        console.log('delete button clicked!');
+      });
+  }
 }

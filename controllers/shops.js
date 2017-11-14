@@ -77,20 +77,20 @@ function createCommentRoute(req, res, next) {
     .catch(next);
 }
 
+
 function deleteCommentRoute(req, res, next) {
   Shop
     .findById(req.params.id)
     .exec()
     .then(shop => {
       if (!shop) return res.notFound();
-      if (!shop.belongsTo(req.shop)) return res.unauthorized('You do not have permission to delete that resource');
-      shop.comments.id(req.params.commentId).remove();
-      shop.save();
-
-      return res.status(200).json({ message: 'comment was deleted.'});
+      const comment = shop.comments.id(req.params.commentId);
+      comment.remove();
+      return res.status(201).json(shop);
     })
     .catch(next);
 }
+
 
 module.exports = {
   index: shopsIndex,

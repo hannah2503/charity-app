@@ -8,17 +8,17 @@
 <button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
 <hr>
 <h3>Comments:</h3>
+
 <ul>
-  <li ng-repeat="comment in vm.shop.comments">
-    <p>Content: {{ comment.content }}</p>
-    <p>Created By: {{ comment.createdBy.username }}</p>
-    <p> Comment Id:  {{ comment._id }}</p>
-    <div ng-if="comment.createdBy._id === vm.currentUserId">
-      <button ui-sref="">Edit the comment</button>
-      <button ng-click="vm.deleteComment(comment)">Delete the comment</button>
-    </div>
-  </li>
-</ul>
+ <li ng-repeat="comment in vm.shop.comments">
+   <p>Content: {{ comment.content }}</p>
+   <p>Created By: {{ comment.createdBy.username }}</p>
+   <p> Comment Id:  {{ comment._id }}</p>
+   <!-- <div ng-if="comment.createdBy._id === vm.currentUserId"> -->
+     <button ng-click="commentDelete({id: vm.shop._id, commentId: vm.comment._id})">Delete the comment</button>
+   <!-- </div> -->
+ </li>
+</ul> `
 
 <form ng-submit="vm.handleNewComment()">
   <label for="comments">Add a Comment:</label>

@@ -28,7 +28,7 @@ function authenticationsLogin(req, res){
       const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '1hr' });
 
       return res.status(200).json({
-        message: 'Good to see you again ${user.username}!',
+        message: `Good to see you again ${user.username}!`,
         token,
         user
       });
