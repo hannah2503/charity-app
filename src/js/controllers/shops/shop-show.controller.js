@@ -33,10 +33,9 @@ function shopShowController(Shop, $stateParams, $state, $auth){
 
   // vm.deleteComment = commentsDelete;
   //
-  // function commentsDelete(comment){
-  //   console.log(comment);
+  // function commentsDelete(){
   //   Shop
-  //     .deleteComment({id: $stateParams.id, commentId: comment._id})
+  //     .deleteComment($stateParams, vm.comment)
   //     .$promise
   //     .then(() => {
   //       console.log('delete button clicked!');
