@@ -29,6 +29,7 @@ app.use('/api', expressJWT({ secret: secret })
     ]
   }));
 
+
 app.use(customResponses);
 app.use('/api', router);
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));

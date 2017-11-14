@@ -1,0 +1,26 @@
+<h1>One Shop</h1>
+
+{{vm.shop.name}}
+{{vm.shop._id}}
+
+<!-- <p ng-if= "{{ vm.shop.createdBy == vm.user }}"><a ui-sref="shopEdit({ id: vm.shop._id })">Edit your shop</a></p> -->
+
+<button class="btn btn-default" ng-click="vm.delete(vm.shop)">Delete this shop</button>
+
+Comments
+<hr>
+<ul>
+  <li ng-repeat="comment in vm.shop.comments">
+    <p>{{ comment.content }}, {{ comment.createdBy.username }}, {{comment._id}}</p>
+    <li ng-if= "{{ comment.createdBy == vm.user }}"><a ui-sref="commentEdit">Edit your comment</a></li>
+    <button ng-click="vm.deleteComment(comment)">Delete</button>
+    <!-- <button ng-click="comment.deleteComment({ id: comment._id })">Delete</button> -->
+  </li>
+</ul>
+
+
+<form ng-submit="vm.handleNewComment()">
+  <label for="comments">Comment:</label>
+  <input type="text" ng-model="vm.comment.content">
+  <input type="submit">
+</form>
