@@ -3,10 +3,13 @@ angular
   .controller('shopFormController', shopFormController);
 
 shopFormController.$inject  = ['Shop', '$state'];
+
 function shopFormController(Shop, $state){
   const vm = this;
   vm.title = 'Add a Shop';
-  vm.submit = shop =>  {
+  vm.submit = shopCreate;
+
+  function shopCreate(shop){
     console.log('submitted shop!');
     Shop
       .save(shop)
@@ -14,6 +17,6 @@ function shopFormController(Shop, $state){
       .then(()=> {
         $state.go('shopsIndex');
       });
-  };
+  }
 
 }

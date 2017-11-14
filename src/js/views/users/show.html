@@ -14,9 +14,4 @@
 
 <button class="btn btn-default" ui-sref="shopsIndex">View all shops</button>
 
-<ul>
-<li ng-if="vm.user.userType === 'Shop Owner'"><a ui-sref="shopForm">Create a shop</a></li>
-</ul>
-
-
-{{ vm.user }}
+<button ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Create a shop</button>
