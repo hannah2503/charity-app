@@ -15,3 +15,4 @@
 <button class="btn btn-default" ui-sref="shopsIndex">View all shops</button>
 <button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Create a shop</button>
 <button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
+<button ng-click="vm.delete(vm.user)">Delete your profile</button>
