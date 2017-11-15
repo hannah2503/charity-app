@@ -16,9 +16,9 @@ function googleMap($window, $timeout) {
       const mapCenter = new $window.google.maps.LatLng(51.5, -0.07);
 
       const map = new $window.google.maps.Map(element[0], {
-        zoom: 12,
+        zoom: 15,
         center: mapCenter,
-        radius: 2000
+        radius: 5000
       });
 
       $timeout(loopOverShops, 100);
@@ -55,39 +55,6 @@ function googleMap($window, $timeout) {
 
       }
 
-
-
-      // function getLngLat() {
-      //   $http({
-      //     method: 'GET',
-      //     url: 'api.postcodes.io/postcodes/n193lq'})
-      //     .success(data => {
-      //       console.log(data);
-      //     });
-      //
-      // function getLngLat() {
-      //   // $http({
-      //   //   method: 'GET',
-      //   //   url: 'api.postcodes.io/postcodes/n193lq'})
-      //   //   .then((response) => {
-      //   //     console.log(response);
-      //   //   });
-      //
-      //   $http
-      //     .get('api.postcodes.io/postcodes/n193lq')
-      //     .then(response => {
-      //       console.log(response.data);
-      //     });
-      //
-      // //     .done((response) => {
-      // //       locations = response;
-      // // locations.forEach((location) => {
-      // //   location.noOfBikes = location.additionalProperties.find(obj => obj.key === 'NbBikes').value;
-      // //   location.noOfSpaces = location.additionalProperties.find(obj => obj.key === 'NbEmptyDocks').value;
-      // //   addMarker(location);
-      // // });
-      // // });
-      // }
 
       function createMarker(shop) {
         const latLng = { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) };
