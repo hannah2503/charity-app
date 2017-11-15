@@ -9,6 +9,5 @@ function Shop($resource, API) {
     'update': { method: 'PUT' },
     'addComment': { url: `${API}/shops/:id/comments`, method: 'POST'},
     'deleteComment': { url: `${API}/shops/:id/comments/:commentId`, method: 'DELETE'}
-
   });
 }

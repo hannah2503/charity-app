@@ -14,16 +14,16 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
 
 const shopSchema = new mongoose.Schema({
   name: String,
-  formatted_address: { type: String, required: true },
-  email: { type: String, required: true},
-  international_phone_number: { type: String, required: true},
-  bio: { type: String, required: true },
-  icon: { type: String, required: true },
-  clothesWanted: { type: String, required: true },
-  clothesNotWanted: { type: String, required: true},
-  lat: { type: Number, required: true },
-  lng: { type: Number, required: true },
-  place_id: { type: String, required: true, unique: true},
+  formatted_address: { type: String },
+  email: { type: String},
+  international_phone_number: { type: String},
+  bio: { type: String},
+  icon: { type: String },
+  clothesWanted: { type: String},
+  clothesNotWanted: { type: String},
+  lat: { type: Number },
+  lng: { type: Number},
+  place_id: { type: String},
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
 });
