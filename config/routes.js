@@ -13,19 +13,19 @@ router.route('/login')
   .post(authentications.login);
 
 router.route('/users')
-  .get(users.index);
+  .get(secureRoute, users.index);
 router.route('/users/:id')
-  .get(users.show)
-  .put(users.update)
-  .delete(users.delete);
+  .get(secureRoute, users.show)
+  .put(secureRoute, users.update)
+  .delete(secureRoute, users.delete);
 
 router.route('/shops')
-  .get(shops.index)
-  .post(shops.create);
+  .get(secureRoute, shops.index)
+  .post(secureRoute, shops.create);
 router.route('/shops/:id')
-  .get(shops.show)
-  .put(shops.update)
-  .delete(shops.delete);
+  .get(secureRoute, shops.show)
+  .put(secureRoute, shops.update)
+  .delete(secureRoute, shops.delete);
 router.route('/shops/:id/comments')
   .post(secureRoute, shops.createComment);
 router.route('/shops/:id/comments/:commentId')
