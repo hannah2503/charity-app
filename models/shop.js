@@ -13,22 +13,27 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
 };
 
 const shopSchema = new mongoose.Schema({
-  name: String,
-  address: {
-    line1: { type: String, required: true },
-    line2: String,
-    city: { type: String, required: true },
-    postcode: { type: String, required: true },
-    country: { type: String, required: true }
-  },
-  // longitude: {type: String, required: true},
-  // latitude: {type: String, required: true},
-  email: { type: String, required: true, unique: true },
-  number: { type: String, required: true, unique: true },
-  bio: { type: String, required: true },
-  image: { type: String, required: true },
-  clothesWanted: { type: String, required: true },
-  clothesNotWanted: { type: String, required: true},
+  // name: String,
+  // formatted_address: {type: String, required: true, unique: true
+  // },
+  // lon: {type: String, required: true},
+  // lat: {type: String, required: true},
+  // email: { type: String, required: false, unique: true },
+  // formatted_phone_number: { type: String, required: true, unique: true },
+  // bio: { type: String },
+  // image: { type: String },
+  // clothesWanted: { type: String, required: true },
+  // clothesNotWanted: { type: String, required: true},
+  // createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  // comments: [ commentSchema ]
+  address: {type: String, required: true},
+  website: { type: String },
+  lat: { type: String },
+  lng: { type: String },
+  name: { type: String },
+  id: { type: String },
+  email: { type: String },
+  number: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
 });

@@ -18,7 +18,13 @@ function googlePlace($window, $rootScope) {
 
         const placeData = {
           address: place.formatted_address,
-          email: place.place_id
+          website: place.website,
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+          name: place.name,
+          id: place.place_id,
+          email: place.email,
+          number: place.formatted_phone_number
 
         };
 
