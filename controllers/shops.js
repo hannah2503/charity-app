@@ -75,6 +75,7 @@ function deleteCommentRoute(req, res, next) {
     .exec()
     .then((shop) => {
       if (!shop) return res.notFound();
+      //belongsto??
       const comment = shop.comments.id(req.params.commentId);
       comment.remove();
       shop.save();
