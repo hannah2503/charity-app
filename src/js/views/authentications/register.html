@@ -6,10 +6,15 @@
     <input type="text" name="username" ng-model="vm.user.username" class="form-control">
   </div>
 
-  <div class="form-group">
-    <label for="userType">User Type</label>
-    <input type="text" name="userType" ng-model="vm.user.userType" class="form-control">
-  </div>
+  <label for="userType">Are you a Shop Owner or a Donor? </label>
+  <input type="text" name="userType" ng-model="vm.user.userType" class="form-control">
+
+  <!-- <div class="form-group">
+    <label for="userType">Shop Owner</label>
+    <input type="radio" name="userType" ng-model="vm.user.userType" value="Shop Owner" class="form-control">
+    <label for="userType">Donor</label>
+    <input type="radio" name="userType" ng-model="vm.user.userType" value="Donor" class="form-control">
+  </div> -->
 
   <div class="form-group">
     <label for="email">Email</label>
