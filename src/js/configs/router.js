@@ -38,7 +38,7 @@ function Router(
     .state('userShow', {
       url: '/users/:id',
       templateUrl: 'js/views/users/show.html',
-      controller: 'userShowController as vm'
+      controller: 'usersShowController as vm'
     })
     .state('shopShow',{
       url: '/shops/:id',
@@ -50,6 +50,11 @@ function Router(
       url: '/shops/:id/form',
       templateUrl: 'js/views/shops/form.html',
       controller: 'shopEditController as vm'
+    })
+    .state('userEdit',{
+      url: '/users/:id/edit',
+      templateUrl: 'js/views/users/form.html',
+      controller: 'usersEditController as vm'
     })
     .state('register', {
       url: '/register',
