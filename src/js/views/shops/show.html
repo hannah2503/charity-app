@@ -1,11 +1,21 @@
 <h1>One Shop</h1>
 
+{{ vm.shop }}
+
+Icon: <img src="{{vm.details.icon}}">
+
 <p>Shop Name: {{ vm.shop.name }}</p>
 <p>Created By: {{ vm.shop.createdBy.username }}</p>
-<p>clothes wanted: {{vm.shop.clothesWanted}}</p>
-<p>clothes unwanted: {{vm.shop.clothesNotWanted}}</p>
-<p>Created By Id: {{ vm.shop.createdBy._id }}</p>
+<p>Address: {{vm.shop.formatted_address}}</p>
+<p>Email: {{ vm.shop.email }}</p>
+<p>Telephone Number: {{vm.shop.international_phone_number}}</p>
+<p>Bio: {{vm.shop.bio}}</p>
+<p>Items Needed for Sale: {{vm.shop.clothesWanted}}</p>
+<p>Items not sold at this shop: {{vm.shop.clothesNotWanted}}</p>
+
+<p>Created By Id: {{ vm.shop.createdBy }}</p>
 <p>Shop Id: {{ vm.shop._id }}</p>
+
 <button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button>
 <button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
 <hr>

@@ -6,7 +6,15 @@ shopsIndexController.$inject =['Shop','filterFilter', '$scope'];
 
 function shopsIndexController(Shop, filterFilter, $scope){
   const vm = this;
-  vm.shops = Shop.query();
+
+  Shop
+    .query()
+    .$promise
+    .then(shops => {
+      vm.shops = shops;
+    });
+
+  // vm.shops = Shop.query();
 
   function filterShop() {
     const params = { name: vm.q };
@@ -19,4 +27,5 @@ function shopsIndexController(Shop, filterFilter, $scope){
   ], filterShop);
 
   vm.filterShop = filterShop;
+
 }

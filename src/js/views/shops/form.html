@@ -1,38 +1,35 @@
 <h1>{{vm.title}}</h1>
 
-<form ng-submit="vm.submit(vm.shop)">
+TESTING AUTOCOMPLETE DIRECTIVE:
+<input type="text" ng-autocomplete ng-model="vm.autocomplete" options="{types: 'establishment'}" details="vm.details"/>
+
+<form ng-submit="vm.getDetails()">
   <label for="name">Name:</label>
-  <input type="text" ng-model="vm.shop.name" name="name" value="Shop Name">
+  <input type="text" ng-model="vm.details.name" name="name">
 
   <label for="address">Address: </label>
-    <label for="line1">Line 1: </label>
-    <input type="text" ng-model="vm.shop.address.line1" name="line1" value="line2">
-    <label for="line2">Line 2: </label>
-    <input type="text" ng-model="vm.shop.address.line2" name="line2" value="line 2">
-    <label for="city">City: </label>
-    <input type="text" ng-model="vm.shop.address.city" name="city" value="city">
-    <label for="postcode">Postcode: </label>
-    <input type="text" ng-model="vm.shop.address.postcode"name="postcode" value="postcode">
-    <label for="country">Country: </label>
-    <input type="text" ng-model="vm.shop.address.country" name="country" value="country">
+    <input type="text" ng-model="vm.details.formatted_address" name="formatted_address">
 
   <label for="email">Email: </label>
-  <input type="text" ng-model="vm.shop.email" name="email" value="email">
+  <input type="text" ng-model="vm.details.email" name="email">
 
   <label for="number">Number: </label>
-  <input type="text"ng-model="vm.shop.number" name="number" value="telephone number">
+  <input type="text" ng-model="vm.details.international_phone_number" name="international_phone_number">
 
   <label for="bio">Bio: </label>
-  <input type="text" ng-model="vm.shop.bio" name="bio" value="bio">
+  <input type="text" ng-model="vm.details.bio" name="bio">
 
   <label for="image">Image: </label>
-  <input type="text" ng-model="vm.shop.image" name="image" value="image">
+  <input type="text" ng-model="vm.details.icon" name="icon">
 
   <label for="wanted">Wanted: </label>
-  <input type="wanted" ng-model="vm.shop.clothesWanted" name="wanted" value="wanted items">
+  <input type="wanted" ng-model="vm.details.clothesWanted" name="wanted">
 
   <label for="unwanted">Unwanted: </label>
-  <input type="unwanted" ng-model="vm.shop.clothesNotWanted" name="unwanted" value="unwanted items">
+  <input type="unwanted" ng-model="vm.details.clothesNotWanted" name="unwanted">
 
 <input type="submit" name="submit" value="{{vm.title}}">
 </form>
+
+
+{{ vm.details | json:4 }}
