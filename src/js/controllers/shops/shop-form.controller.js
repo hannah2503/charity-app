@@ -2,12 +2,16 @@ angular
   .module('charityApp')
   .controller('shopFormController', shopFormController);
 
-shopFormController.$inject  = ['Shop', '$state', '$rootScope'];
+shopFormController.$inject  = ['Shop', '$state', '$rootScope', '$scope'];
 
-function shopFormController(Shop, $state, $rootScope){
+function shopFormController(Shop, $state, $rootScope, $scope){
   const vm = this;
   vm.title = 'Add a Shop';
 
+  $rootScope.$on('new place', (e, placeData) => {
+    vm.shop = placeData;
+    $scope.$apply();
+  });
 
   vm.submit = shop => {
     console.log('submitted shop!');

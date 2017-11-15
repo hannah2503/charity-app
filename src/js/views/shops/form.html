@@ -1,8 +1,17 @@
 <h1>{{vm.title}}</h1>
 
-<form ng-submit="vm.submit(vm.shop)">
+<input type="text" id="google-places" google-place/>
+
+<form ng-submit="vm.submit()">
+  <label for="address">Address: </label>
+  <input type="text" name="address" ng-model="vm.shop.address">
+  <label for="country">place id: </label>
+  <input type="text" name="placeid" ng-model="vm.shop.">
+</form>
+
+<!-- <form ng-submit="vm.submit(vm.shop)">
   <label for="name">Name:</label>
-  <input type="text" ng-model="vm.shop.name" name="name" value="Shop Name">
+  <input type="text" ng-model="vm.shop.name" name="name" value="{{vm.name}}">
 
   <label for="address">Address: </label>
     <label for="line1">Line 1: </label>
@@ -35,4 +44,4 @@
   <input type="unwanted" ng-model="vm.shop.clothesNotWanted" name="unwanted" value="unwanted items">
 
 <input type="submit" name="submit" value="{{vm.title}}">
-</form>
+</form> -->
