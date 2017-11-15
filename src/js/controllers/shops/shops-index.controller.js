@@ -6,6 +6,10 @@ shopsIndexController.$inject =['Shop'];
 
 function shopsIndexController(Shop){
   const vm = this;
-  vm.shops = Shop.query();
-  console.log(vm.shops);
+  Shop
+    .query()
+    .$promise
+    .then(shops => {
+      vm.shops = shops;
+    });
 }

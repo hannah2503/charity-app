@@ -25,6 +25,7 @@ function googleMap($window, $timeout) {
 
       function loopOverShops() {
         scope.shops.forEach(shop => {
+          console.log(shop);
           createMarker(shop);
         });
       }
@@ -56,7 +57,7 @@ function googleMap($window, $timeout) {
       }
 
       function createMarker(shop) {
-        const latLng = { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) };
+        const latLng = { lat: parseFloat(shop.lat), lng: parseFloat(shop.lng) };
         const marker = new $window.google.maps.Marker({
           position: latLng,
           map: map
