@@ -22,22 +22,12 @@ function shopsShow(req, res) {
 }
 
 function shopsCreate(req, res) {
-  // console.log('hitting');
-  //shop.findOne({place_id: req.body.place_id})
-  //exec then if shop exists then.... else create shop
+  req.body.createdBy = req.user;
+
   Shop
-    .findOne({place_id: req.body.place_id})
-    .exec()
-    .then(shop => {
-      if(shop) return res.status(201).json({message: 'Shop already exists.'});
-
-      req.body.createdBy = req.user.userId;
-
-      Shop
-        .create(req.body)
-        .then(shop => res.status(201).json(shop))
-        .catch(err => console.log(err));
-    });
+    .create(req.body)
+    .then(shop => res.status(201).json(shop))
+    .catch(err => console.log(err));
 }
 
 function shopsUpdate(req, res, next) {
