@@ -55,7 +55,6 @@ function googleMap($window, $timeout) {
 
       }
 
-
       function createMarker(shop) {
         const latLng = { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) };
         const marker = new $window.google.maps.Marker({
