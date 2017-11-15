@@ -4,11 +4,15 @@ angular
 
 mainController.$inject = [
   '$state',
+  '$scope',
+  '$location',
   '$rootScope',
   'currentUserService'
 ];
 function mainController(
   $state,
+  $scope,
+  $location,
   $rootScope,
   currentUserService) {
   const vm = this;
@@ -18,6 +22,8 @@ function mainController(
   $rootScope.$on('loggedIn', () => {
     vm.user = currentUserService.currentUser;
   });
+
+  $scope.currentPath = $location.path();
 
   $rootScope.$on('loggedOut', () => {
     vm.user = null;
