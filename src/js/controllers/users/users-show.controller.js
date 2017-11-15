@@ -6,5 +6,10 @@ usersShowController.$inject = ['$stateParams', 'User'];
 function usersShowController($stateParams, User){
   const vm = this;
 
-  vm.user = User.get($stateParams);
+  User
+    .get({id: $stateParams.id})
+    .$promise
+    .then(user => {
+      vm.user = user;
+    });
 }

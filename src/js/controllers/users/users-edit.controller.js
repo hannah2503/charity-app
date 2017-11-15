@@ -8,14 +8,18 @@ function usersEditController(User, $stateParams, $state){
 
   const vm = this;
   vm.title = 'Edit your profile';
-  vm.user = User.get($stateParams);
-  vm.submit = user => {
+  User
+    .get({id: $stateParams.id})
+    .$promise
+    .then(user => {
+      vm.user = user;
+    });
+  vm.submit = () => {
     User
-      .update({id: user._id}, user)
+      .update({id: $stateParams.id}, vm.user)
       .$promise
-      .then((user)=> {
-
-        $state.go('userShow', {id: user._id});
+      .then(()=> {
+        $state.go('userShow', {id: $stateParams.id});
       });
   };
 }

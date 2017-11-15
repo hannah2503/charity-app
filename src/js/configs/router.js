@@ -52,7 +52,7 @@ function Router(
       controller: 'shopEditController as vm'
     })
     .state('userEdit',{
-      url: '/users/:id/edit',
+      url: '/users/:id/form',
       templateUrl: 'js/views/users/form.html',
       controller: 'usersEditController as vm'
     })
