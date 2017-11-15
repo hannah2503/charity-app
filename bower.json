@@ -20,7 +20,8 @@
     "angular": "^1.6.6",
     "angular-resource": "^1.6.4",
     "angular-ui-router": "^1.0.4",
-    "satellizer": "^0.15.5"
+    "satellizer": "^0.15.5",
+    "ngAutocomplete": "^1.0.0"
   },
   "resolutions": {
     "angular": "1.6.6"

@@ -1,10 +1,10 @@
 angular
   .module('charityApp')
-  .controller('userShowController', userShowController);
+  .controller('usersShowController', usersShowController);
 
-userShowController.$inject = ['$stateParams', 'User'];
-function userShowController($stateParams, User){
+usersShowController.$inject = ['$stateParams', 'User'];
+function usersShowController($stateParams, User){
   const vm = this;
-
   vm.user = User.get($stateParams);
+
 }

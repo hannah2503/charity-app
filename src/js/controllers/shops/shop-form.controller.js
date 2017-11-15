@@ -2,37 +2,40 @@ angular
   .module('charityApp')
   .controller('shopFormController', shopFormController);
 
-shopFormController.$inject  = ['Shop', '$state', '$rootScope', '$scope'];
+shopFormController.$inject  = ['Shop', '$state'];
 
-function shopFormController(Shop, $state, $rootScope, $scope){
+function shopFormController(Shop, $state){
   const vm = this;
   vm.title = 'Add a Shop';
 
-  $rootScope.$on('new place', (e, placeData) => {
-    vm.shop = placeData;
-    $scope.$apply();
-  });
+  vm.submit = shopCreate;
+  vm.getDetails = getDetails;
 
-  vm.submit = shop => {
-    console.log('submitted shop!');
+  function getDetails() {
+    vm.shop = {
+      name: vm.details.name,
+      formatted_address: vm.details.formatted_address,
+      email: vm.details.email,
+      international_phone_number: vm.details.international_phone_number,
+      bio: vm.details.bio,
+      icon: vm.details.icon,
+      clothesWanted: vm.details.clothesWanted,
+      clothesNotWanted: vm.details.clothesNotWanted,
+      place_id: vm.details.place_id,
+      lat: vm.details.geometry.location.lat(),
+      lng: vm.details.geometry.location.lng()
+    };
+
+    shopCreate();
+  }
+
+  function shopCreate(){
     Shop
-      .save(shop)
+      .save(vm.shop)
       .$promise
       .then(()=> {
         $state.go('shopsIndex');
       });
+  }
 
-  };
 }
-
-// vm.submit = shopCreate;
-//
-// function shopCreate(shop){
-//   console.log('submitted shop!');
-//   Shop
-//     .save(shop)
-//     .$promise
-//     .then(()=> {
-//       $state.go('shopsIndex');
-//     });
-//

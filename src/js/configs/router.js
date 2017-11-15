@@ -38,7 +38,7 @@ function Router(
     .state('userShow', {
       url: '/users/:id',
       templateUrl: 'js/views/users/show.html',
-      controller: 'userShowController as vm'
+      controller: 'usersShowController as vm'
     })
     .state('shopShow',{
       url: '/shops/:id',

@@ -13,27 +13,17 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
 };
 
 const shopSchema = new mongoose.Schema({
-  // name: String,
-  // formatted_address: {type: String, required: true, unique: true
-  // },
-  // lon: {type: String, required: true},
-  // lat: {type: String, required: true},
-  // email: { type: String, required: false, unique: true },
-  // formatted_phone_number: { type: String, required: true, unique: true },
-  // bio: { type: String },
-  // image: { type: String },
-  // clothesWanted: { type: String, required: true },
-  // clothesNotWanted: { type: String, required: true},
-  // createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  // comments: [ commentSchema ]
-  address: {type: String, required: true},
-  website: { type: String },
-  lat: { type: String },
-  lng: { type: String },
-  name: { type: String },
-  id: { type: String },
-  email: { type: String },
-  number: { type: String },
+  name: String,
+  formatted_address: { type: String, required: true },
+  email: { type: String, required: true},
+  international_phone_number: { type: String, required: true},
+  bio: { type: String, required: true },
+  icon: { type: String, required: true },
+  clothesWanted: { type: String, required: true },
+  clothesNotWanted: { type: String, required: true},
+  lat: { type: Number, required: true },
+  lng: { type: Number, required: true },
+  place_id: { type: String, required: true, unique: true},
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
 });

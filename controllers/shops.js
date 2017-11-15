@@ -22,7 +22,6 @@ function shopsShow(req, res) {
 }
 
 function shopsCreate(req, res) {
-  // console.log('hitting');
   req.body.createdBy = req.user;
 
   Shop
@@ -75,6 +74,7 @@ function deleteCommentRoute(req, res, next) {
     .exec()
     .then((shop) => {
       if (!shop) return res.notFound();
+      //belongsto??
       const comment = shop.comments.id(req.params.commentId);
       comment.remove();
       shop.save();

@@ -6,7 +6,8 @@
   <title>WDI Project 3</title>
   <base href="/">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADnrK1WtoMu4NnqP3Jd0ObDyNvis_5Ha4&libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmq8sNSP6FqfKM2EwN0KBsXRnVoVgsDbQ&libraries=places"></script>
+
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -14,12 +15,12 @@
 </head>
 
 <body ng-controller="mainController as vm">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-show="currentPath === '/'" ng-hide="currentPath !=== '/'">
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
     <button type="button" class="button" ui-sref="shopsIndex">Shops</button>
     <button type="button" class="button" ng-click="vm.logout()" ng-if="vm.user">Logout</button>
-  </nav>
+  </nav> -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-show="currentPath !=== '/'" ng-hide="currentPath === '/'">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
     <button type="button" class="button" ui-sref="shopsIndex">Shops</button>
     <button type="button" class="button" ui-sref="register" ng-if="!vm.user">Register</button>
     <button type="button" class="button" ui-sref="login" ng-if="!vm.user">Login</button>
