@@ -1,14 +1,21 @@
 <h1>All the Shops</h1>
 
+<div class="wrapper">
+  <header class="l-box">
+    <input type="text" id="findShop" class="search" ng-model="vm.q" placeholder="Search...">
+  </header>
+</div>
 
   <google-map shops="vm.shops"></google-map>
 
-
 <div class="row">
-  <div class="col-md-4" ng-repeat="shop in vm.shops">
+  <div class="col-md-4" ng-repeat="shop in vm.filtered">
     <div class="card" style="width: 20rem;">
       <div class="card-body">
         <h4 class="card-title">{{ shop.name }}</h4>
+        <h3>{{ shop.address.line1 }}</h3>
+        <h5>{{ shop.address.line2 }}</h5>
+        <h5>{{ shop.address.city }}</h5>
         <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
       </div>
     </div>

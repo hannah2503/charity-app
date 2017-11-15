@@ -2,5 +2,7 @@ angular
   .module('charityApp', [
     'ui.router',
     'ngResource',
-    'satellizer'
+    'satellizer',
+    'ngAutocomplete'
+
   ]);
