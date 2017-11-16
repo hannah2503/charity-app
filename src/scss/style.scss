@@ -14,6 +14,22 @@
 @import "components/navbar";
 @import "components/homepage";
 @import "components/login";
+@font-face {
+   font-family: 'GT-Walsheim-Light';
+   src: url("fonts/GT-Walsheim-Light.ttf") format("truetype");
+}
+@font-face {
+   font-family: 'GT-Walsheim-Oblique';
+   src: url("fonts/GT-Walsheim-Light-Oblique.ttf") format("truetype");
+}
+@font-face {
+   font-family: 'GT-Walsheim-Bold';
+   src: url("fonts/GT-Walsheim-Bold.ttf") format("truetype");
+}
+@font-face {
+   font-family: 'amerigo bt';
+   src: url("fonts/amerigo bt.ttf") format("truetype");
+}
 
 //hannah added some basic layout style for shop page here
 .shopPage {
