@@ -14,7 +14,7 @@ function authenticationsRegister(req, res){
         user
       });
     })
-    .catch(() => res.status(500).json({ message: 'Woops, something went wrong!' }));
+    .catch(() => res.status(500).json({ message: 'Whoops, something went wrong!' }));
 }
 
 function authenticationsLogin(req, res){
@@ -33,8 +33,7 @@ function authenticationsLogin(req, res){
         user
       });
     })
-    // .catch(next);
-    .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Whoops, something went wrong.' }));
 }
 
 module.exports = {

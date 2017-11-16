@@ -11,7 +11,6 @@ function shopsIndexController(Shop, filterFilter, $scope){
 
   function filterShop() {
     const params = { name: vm.q };
-
     vm.filtered = filterFilter(vm.shops, params);
   }
 
@@ -20,5 +19,4 @@ function shopsIndexController(Shop, filterFilter, $scope){
   ], filterShop);
 
   vm.filterShop = filterShop;
-
 }

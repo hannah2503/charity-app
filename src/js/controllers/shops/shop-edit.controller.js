@@ -14,7 +14,6 @@ function shopEditController(Shop, $stateParams, $state){
       .update({id: shop._id}, shop)
       .$promise
       .then((shop)=> {
-
         $state.go('shopShow', {id: shop._id});
       });
   };

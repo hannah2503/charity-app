@@ -8,7 +8,5 @@ usersIndexController.$inject = [
 function usersIndexController(
   User) {
   const vm = this;
-
   vm.users = User.query();
-  console.log(vm.users);
 }

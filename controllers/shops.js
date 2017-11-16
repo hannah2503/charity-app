@@ -6,7 +6,7 @@ function shopsIndex(req, res) {
     .populate('createdBy')
     .exec()
     .then(shops => res.status(200).json(shops))
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong! Please try again!' }));
 }
 
 function shopsShow(req, res) {
@@ -18,12 +18,11 @@ function shopsShow(req, res) {
       if (!shop) return res.status(404).json({ message: 'Shop not found.' });
       return res.status(200).json(shop);
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong! Please try again!' }));
 }
 
 function shopsCreate(req, res) {
   req.body.createdBy = req.user;
-
   Shop
     .create(req.body)
     .then(shop => res.status(201).json(shop))
@@ -45,10 +44,10 @@ function shopsDelete(req, res) {
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(shop => {
-      if (!shop) return res.status(404).json({ message: 'Shop not found.' });
+      if (!shop) return res.status(404).json({ message: 'We could not find the Shop. Please try again!' });
       return res.sendStatus(204);
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong! Please try again!' }));
 }
 
 function createCommentRoute(req, res, next) {
@@ -57,7 +56,6 @@ function createCommentRoute(req, res, next) {
     .exec()
     .then(shop => {
       if (!shop) return res.notFound();
-
       req.body.createdBy = req.user;
       shop.comments.push(req.body);
       shop.save();
@@ -67,24 +65,19 @@ function createCommentRoute(req, res, next) {
     .catch(next);
 }
 
-
 function deleteCommentRoute(req, res, next) {
   Shop
     .findById(req.params.id)
     .exec()
     .then((shop) => {
       if (!shop) return res.notFound();
-      //belongsto??
       const comment = shop.comments.id(req.params.commentId);
       comment.remove();
       shop.save();
-
-      return res.status(200).json({ message: 'comment was successfully deleted.'});
+      return res.status(200).json({ message: 'Your comment was successfully deleted. Please leave another again soon!'});
     })
     .catch(next);
 }
-
-
 
 module.exports = {
   index: shopsIndex,

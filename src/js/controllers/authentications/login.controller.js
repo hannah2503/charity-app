@@ -18,7 +18,6 @@ function loginController($auth, $state, currentUserService) {
 
   function logout() {
     $auth.logout();
-
     $state.go('home');
   }
 }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 const dbURI =
-  process.env.MONGODB_URI || 'mongodb://localhost/wdip3-development';
+process.env.MONGODB_URI || 'mongodb://localhost/wdip3-development';
 mongoose.connect(dbURI, { useMongoClient: true });
 
 const User = require('../models/user');

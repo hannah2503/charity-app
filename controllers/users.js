@@ -6,7 +6,7 @@ function usersIndex(req, res) {
     .exec()
     .then((users) =>
       res.status(200).json(users))
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
 }
 
 function usersShow(req, res) {
@@ -14,10 +14,10 @@ function usersShow(req, res) {
     .findById(req.params.id)
     .exec()
     .then(user => {
-      if (!user) return res.status(404).json({ message: 'User not found.' });
+      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
       return res.status(200).json(user);
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
 }
 
 function usersUpdate(req, res) {
@@ -25,10 +25,10 @@ function usersUpdate(req, res) {
     .findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
     .exec()
     .then(user => {
-      if (!user) return res.status(404).json({ message: 'User not found.' });
+      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
       return res.status(200).json({ user });
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
 }
 
 function usersDelete(req, res) {
@@ -36,10 +36,10 @@ function usersDelete(req, res) {
     .findByIdAndRemove(req.params.id)
     .exec()
     .then((user) => {
-      if (!user) return res.status(404).json({ message: 'User not found.' });
+      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
       return res.sendStatus(204);
     })
-    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
+    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
 }
 
 module.exports = {

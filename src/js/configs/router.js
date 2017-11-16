@@ -45,7 +45,6 @@ function Router(
       templateUrl: 'js/views/shops/show.html',
       controller: 'shopShowController as vm'
     })
-    //form for editing a shop
     .state('shopEdit',{
       url: '/shops/:id/form',
       templateUrl: 'js/views/shops/form.html',
