@@ -5,12 +5,11 @@
   margin: 0 auto;
 }
 
-
 .showMap {
   height: 400px;
   width: 900px;
 }
-
+@import "components/register";
 @import "components/navbar";
 @import "components/homepage";
 @import "components/login";
@@ -31,78 +30,76 @@
    src: url("fonts/amerigo bt.ttf") format("truetype");
 }
 
-//hannah added some basic layout style for shop page here
-.shopPage {
-  margin: 0 auto;
-  max-width: 900px;
-
-  .shopLogo {
-    max-width: 200px;
-  }
-
-  .shopInfo {
-    float:left;
-    max-width: 900px;
-
-    li {
-      float: left;
-    }
-  }
-
-  .shopWants {
-    float: left;
-    margin-top: 30px;
-    max-width: 450px;
-
-  }
-
-  .comments {
-    float: left;
-    margin-top: 30px;
-    max-width: 450px;
-  }
-
-}
-
-
-//hannah has added add a shop page layout
-
-.addShopPage {
-  margin: auto;
-  max-width: 900px;
-    input {
-      min-width: 400px;
-    }
-    label {
-      min-width: 250px;
-    }
-}
-
-//hannah has added a user form layout
-
-.addUserPage {
-  margin: auto;
-  max-width: 900px;
-    input {
-      min-width: 400px;
-    }
-    label {
-      min-width: 250px;
-    }
-}
-
-//hannah has added a registration layout
-
-.registerPage {
-  margin: auto;
-  max-width: 900px;
-    input {
-      min-width: 400px;
-    }
-    label {
-      min-width: 250px;
-    }
-
-}
-
-@import "components/register";
+// //hannah added some basic layout style for shop page here
+// .shopPage {
+//   margin: 0 auto;
+//   max-width: 900px;
+//
+//   .shopLogo {
+//     max-width: 200px;
+//   }
+//
+//   .shopInfo {
+//     float:left;
+//     max-width: 900px;
+//
+//     li {
+//       float: left;
+//     }
+//   }
+//
+//   .shopWants {
+//     float: left;
+//     margin-top: 30px;
+//     max-width: 450px;
+//
+//   }
+//
+//   .comments {
+//     float: left;
+//     margin-top: 30px;
+//     max-width: 450px;
+//   }
+//
+// }
+//
+//
+// //hannah has added add a shop page layout
+//
+// .addShopPage {
+//   margin: auto;
+//   max-width: 900px;
+//     input {
+//       min-width: 400px;
+//     }
+//     label {
+//       min-width: 250px;
+//     }
+// }
+//
+// //hannah has added a user form layout
+//
+// .addUserPage {
+//   margin: auto;
+//   max-width: 900px;
+//     input {
+//       min-width: 400px;
+//     }
+//     label {
+//       min-width: 250px;
+//     }
+// }
+//
+// //hannah has added a registration layout
+//
+// // .registerPage {
+// //   margin: auto;
+// //   max-width: 900px;
+// //     input {
+// //       min-width: 400px;
+// //     }
+// //     label {
+// //       min-width: 250px;
+// //     }
+// //
+// // }
