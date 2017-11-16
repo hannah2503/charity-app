@@ -1,6 +1,7 @@
-<h1>Register</h1>
+<div class="background-register">
+<h1 class="login-title">Register</h1>
 
-<form ng-submit="vm.submitForm()">
+<form ng-submit="vm.submitForm()" class="login-form">
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" name="username" ng-model="vm.user.username" class="form-control">
@@ -40,3 +41,4 @@
     <input type="submit" value="Register" class="btn btn-success">
   </div>
 </form>
+</div>
