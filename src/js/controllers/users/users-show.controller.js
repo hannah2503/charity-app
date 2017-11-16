@@ -2,8 +2,8 @@ angular
   .module('charityApp')
   .controller('usersShowController', usersShowController);
 
-usersShowController.$inject = ['$stateParams', 'User', '$state', 'Shop'];
-function usersShowController($stateParams, User, $state, Shop) {
+usersShowController.$inject = ['$stateParams', 'User', '$state', 'Shop', '$uibModal'];
+function usersShowController($stateParams, User, $state, Shop, $uibModal) {
   const vm = this;
 
   vm.delete = userDelete;
@@ -18,4 +18,18 @@ function usersShowController($stateParams, User, $state, Shop) {
   User.get({ id: $stateParams.id }).$promise.then(user => {
     vm.user = user;
   });
+
+  function openModal() {
+    $uibModal.open({
+      templateUrl: 'js/views/partials/userDeleteModal.html',
+      controller: 'UsersDeleteCtrl as vm',
+      resolve: {
+        user: () => {
+          return vm.user;
+        }
+      }
+    });
+  }
+
+  vm.open = openModal;
 }
