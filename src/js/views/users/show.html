@@ -1,4 +1,4 @@
-<h1>User Profile</h1>
+<h1>Your Profile</h1>
 
 <button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
 <button class="btn btn-default" ng-click="vm.open()">Delete your profile</button>
@@ -26,7 +26,7 @@
   <div class="col-md-4" ng-repeat="shop in vm.shops" ng-if="vm.user._id === shop.createdBy._id">
     <div class="card" style="width: 20rem;">
       <div class="card-body">
-        <h4><em>Your shop</em></h4>
+        <h2><em>Your shop!</em></h2>
         <h4 class="card-title">{{ shop.name }}</h4>
           <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
       </div>
