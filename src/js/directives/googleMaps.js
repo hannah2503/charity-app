@@ -25,7 +25,6 @@ function googleMap($window, $timeout) {
 
       function loopOverShops() {
         scope.shops.forEach(shop => {
-          console.log(shop);
           createMarker(shop);
         });
       }
@@ -46,14 +45,12 @@ function googleMap($window, $timeout) {
         handleLocationError(false, map.getCenter());
       }
 
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
           'Error: The Geolocation service failed.' :
           'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
-
       }
 
       function createMarker(shop) {
@@ -66,15 +63,15 @@ function googleMap($window, $timeout) {
         marker.addListener('click', () => {
           infowindow = new $window.google.maps.InfoWindow({
             content: `
-            <div class="infowindow">
-              <h3>${shop.name}</h3>
-              <p><strong>Needed: ${shop.clothesWanted}</strong></p>
-              <p><strong>Not needed: ${shop.clothesNotWanted}</strong></p>
-            </div>`
+              <div class="infowindow">
+                <h3>${shop.name}</h3>
+                <p><strong>Address: ${shop.formatted_address}</strong></p>
+                <p><strong>Needed: ${shop.clothesWanted}</strong></p>
+                <p><strong>Not needed: ${shop.clothesNotWanted}</strong></p>
+              </div>`
           });
 
           createInfoWindow(marker, shop);
-          // getLngLat(shop);
         });
       }
 
