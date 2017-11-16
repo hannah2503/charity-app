@@ -1,5 +1,8 @@
 <h1>User Profile</h1>
 
+<button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
+<button ng-click="vm.delete(vm.user)">Delete your profile</button>
+
 <div class="row">
   <div class="col-md-4">
     <div class="card" style="width: 20rem;">
@@ -12,7 +15,16 @@
   </div>
 </div>
 
-<button class="btn btn-default" ui-sref="shopsIndex">View all shops</button>
-<button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Create a shop</button>
-<button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
-<button ng-click="vm.delete(vm.user)">Delete your profile</button>
+<button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">You are a shop owner, click to add your shop!</button>
+<button type="button" class="button" ui-sref="shopsIndex" ng-if="vm.user">All Shops</button>
+
+<div class="row">
+  <div class="col-md-4" ng-repeat="shop in vm.shops">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title">{{ shop.name }}</h4>
+          <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
+      </div>
+    </div>
+  </div>
+</div>
