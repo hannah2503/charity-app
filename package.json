@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install && gulp deploy",
-    "test": "istanbul cover node_modules/.bin/_mocha"
+    "test": "istanbul cover node_modules/.bin/_mocha",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,json,css}": ["prettier-eslint --single-quote --write", "git add"]
   },
   "author": "Students",
   "license": "ISC",
