@@ -17,14 +17,18 @@ User.create([
     username: 'CamJones',
     email: 'cam@cam.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    image:
+      'http://i.dailymail.co.uk/i/pix/2017/03/05/10/0018F2E600000258-0-image-a-55_1488709297836.jpg'
   },
   {
     userType: 'Donor',
     username: 'HannahCross',
     email: 'han@han.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    image:
+      'http://www.licensingsource.net/wp-content/uploads/2017/03/MiffyBalloon.jpg'
   },
   {
     userType: 'Shop Owner',
@@ -40,7 +44,9 @@ User.create([
     username: 'CamJ',
     email: 'camj@camj.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    image:
+      'https://shapersofthe80s.files.wordpress.com/2010/11/pp10rcja.jpg?w=500'
   }
 ])
   .then(users => {

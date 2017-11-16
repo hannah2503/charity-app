@@ -21,9 +21,13 @@ function googleMap($window, $timeout) {
       $timeout(loopOverShops, 100);
 
       function loopOverShops() {
-        scope.shops.forEach(shop => {
-          createMarker(shop);
-        });
+        if (scope.shops.length > 0) {
+          scope.shops.forEach(shop => {
+            createMarker(shop);
+          });
+        } else {
+          createMarker(scope.shops);
+        }
       }
 
       var infowindow = new $window.google.maps.InfoWindow();
@@ -50,7 +54,7 @@ function googleMap($window, $timeout) {
         infoWindow.setContent(
           browserHasGeolocation
             ? 'Error: The Geolocation service failed.'
-            : 'Error: Your browser doesn\'t support geolocation.'
+            : "Error: Your browser doesn't support geolocation."
         );
         infoWindow.open(map);
       }
