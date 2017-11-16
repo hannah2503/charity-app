@@ -1,37 +1,48 @@
-<h1>{{vm.title}}</h1>
 
-TESTING AUTOCOMPLETE DIRECTIVE:
+<div class="addShopPage">
+  <h1>{{vm.title}}</h1>
+<label for="autocomplete">Charity Shop Name Here:</label>
 <input type="text" ng-autocomplete ng-model="vm.autocomplete" options="{types: 'establishment'}" details="vm.details"/>
 
 <form ng-submit="vm.getDetails()">
-  <label for="name">Name:</label>
-  <input type="text" ng-model="vm.details.name" name="name">
-
-  <label for="address">Address: </label>
+  <div class="formName">
+    <label for="name">Name:</label>
+    <input type="text" ng-model="vm.details.name" name="name">
+  </div>
+  <div class="formAddress">
+    <label for="address">Address: </label>
     <input type="text" ng-model="vm.details.formatted_address" name="formatted_address">
-
-  <label for="email">Email: </label>
-  <input type="text" ng-model="vm.details.email" name="email">
-
-  <label for="number">Number: </label>
-  <input type="text" ng-model="vm.details.international_phone_number" name="international_phone_number">
-
-  <label for="bio">Bio: </label>
-  <input type="text" ng-model="vm.details.bio" name="bio">
-
-  <label for="image">Image: </label>
-  <input type="text" ng-model="vm.details.icon" name="icon">
-
-  <label for="wanted">Wanted: </label>
-  <input type="wanted" ng-model="vm.details.clothesWanted" name="wanted">
-
-  <label for="unwanted">Unwanted: </label>
-  <input type="unwanted" ng-model="vm.details.clothesNotWanted" name="unwanted">
-
-<input type="submit" name="submit" value="{{vm.title}}">
+  </div>
+  <div class="formEmail">
+    <label for="email">Email: </label>
+    <input type="text" ng-model="vm.details.email" name="email">
+  </div>
+  <div class="formNumber">
+    <label for="number">Number: </label>
+    <input type="text" ng-model="vm.details.international_phone_number" name="international_phone_number">
+  </div>
+  <div class="formBio">
+    <label for="bio">Bio: </label>
+    <input type="text" ng-model="vm.details.bio" name="bio">
+  </div>
+  <div class="formImage">
+    <label for="image">Image: </label>
+    <input type="text" ng-model="vm.details.icon" name="icon">
+  </div>
+  <div class="formWanted">
+    <label for="wanted">Wanted: </label>
+    <input type="wanted" ng-model="vm.details.clothesWanted" name="wanted">
+  </div>
+  <div class="formUnwanted">
+    <label for="unwanted">Unwanted: </label>
+    <input type="unwanted" ng-model="vm.details.clothesNotWanted" name="unwanted">
+  </div>
+  <div class="formSubmit">
+    <button type="submit" name="submit">{{vm.title}}</button>
+  </div>
 </form>
-
 
 <button type="button" ui-sref="home">Back To Home</button>
 <button type="button" ui-sref="shopsIndex">Back To Shops</button>
 <!--button back to user profile?  -->
+</div>

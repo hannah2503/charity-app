@@ -5,6 +5,80 @@
   margin: 0 auto;
 }
 
+
 @import "components/navbar";
 @import "components/homepage";
 @import "components/login";
+
+//hannah added some basic layout style for shop page here
+.shopPage {
+  margin: 0 auto;
+  max-width: 900px;
+
+  .shopLogo {
+    max-width: 200px;
+  }
+
+  .shopInfo {
+    float:left;
+    max-width: 900px;
+
+    li {
+      float: left;
+    }
+  }
+
+  .shopWants {
+    float: left;
+    margin-top: 30px;
+    max-width: 450px;
+
+  }
+
+  .comments {
+    float: left;
+    margin-top: 30px;
+    max-width: 450px;
+  }
+
+}
+
+//hannah has added add a shop page layout
+
+.addShopPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
+}
+
+//hannah has added a user form layout
+
+.addUserPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
+}
+
+//hannah has added a registration layout
+
+.registerPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
+
+}
