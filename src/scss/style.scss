@@ -12,6 +12,10 @@
   font-size: 25px;
   font-weight: 800px;
   background-color: #32424A!important;
+
+  button {
+    color: white;
+  }
 }
 
 .welcome {
@@ -30,7 +34,8 @@ button {
   margin: 0 20px;
   border: none;
   background: none;
-  color: #F1F4F6;
+  // color: #F1F4F6;
+  color: black;
   transition-property: font-size;
   transition-duration: 0.2s;
 }
