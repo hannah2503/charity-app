@@ -3,6 +3,8 @@ angular
     'ui.router',
     'ngResource',
     'satellizer',
-    'ngAutocomplete'
+    'ngAutocomplete',
+    'ui.bootstrap',
+    'ngAnimate'
 
   ]);

@@ -1,7 +1,7 @@
 <h1>Your Profile</h1>
 
 <button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
-<button ng-click="vm.delete(vm.user)">Delete your profile</button>
+<button class="btn btn-default" ng-click="vm.delete(vm.user)">Delete your profile</button>
 
 <div class="row">
   <div class="col-md-4">
@@ -18,7 +18,7 @@
 
 <br>
 
-<button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">You are a shop owner, click to add your shop!</button>
+<button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add your shop!</button>
 
 <br>
 

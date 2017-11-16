@@ -48,8 +48,14 @@ function googleMap($window, $timeout) {
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(
+<<<<<<< HEAD
           browserHasGeolocation?'Error: The Geolocation service failed.'
             :'Error: Your browser doesn\'t support geolocation.'
+=======
+          browserHasGeolocation
+            ? 'Error: The Geolocation service failed.'
+            : 'Error: Your browser doesn\'t support geolocation.'
+>>>>>>> c31d9b8d1b6d62e90c51ac86ddb44e4b59a08965
         );
         infoWindow.open(map);
       }
