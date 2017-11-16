@@ -27,7 +27,7 @@ function mainController(
 
   $rootScope.$on('loggedOut', () => {
     vm.user = null;
-    $state.go('login');
+    $state.go('home');
   });
 
   function logout() {
