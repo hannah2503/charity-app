@@ -1,0 +1,151 @@
+.welcome {
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'GT Walsheim';
+  display: inline-block;
+  margin: 60px 0 30px 0;
+  color: #434441;
+}
+
+.home-wrapper {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  margin: 70px auto;
+  width: 600px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'GT Walsheim';
+}
+
+
+.login {
+  line-height: 62px;
+  float:left;
+  display: inline-block;
+  background-color: white;
+  color: #434441;
+  height: 70px;
+  width: 180px;
+  font-weight: 600;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+}
+
+.login, .register {
+  font-size: 40px;
+}
+
+.home {
+
+  transition-property: color background-color;
+  transition-duration: 0.2s;
+}
+
+.home:hover {
+  color: white;
+  background-color: #dcc3da;
+  border: 3px solid #dcc3da;
+}
+
+.register:hover {
+  box-shadow: 0px 0px 0px #434441;
+}
+.login:hover {
+  box-shadow: 0px 0px 0px #434441;
+}
+
+.register {
+  line-height: 62px;
+  float: right;
+  width: 180px;
+  display: inline-block;
+  background-color: white;
+  color: #434441;
+  height: 70px;
+  font-weight: 600;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: -7px 7px 0px #dcc3da;
+  transition-duration: 0.4s;
+}
+
+.tag-line {
+  font-family: 'amerigo bt';
+  margin: 30px auto;
+  color: #434441;
+}
+
+.banner {
+  width: 100%;
+  height: 180px;
+  margin-top: 430px;
+  display: inline-block;
+  background-image: url('../images/donate-illustration.png');
+  background-size: 80%;
+  background-repeat: repeat-x;
+}
+
+.icon-footer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    font-size: 30px;
+    color: #434441;
+    letter-spacing: 4px;
+    text-align: center;
+    float: none;
+}
+
+.icon {
+  list-style-type: none;
+  align-items: center;
+  margin: 0 auto;
+  float: left;
+  padding: 0 20px;
+
+}
+
+.icon-list {
+  margin: auto;
+  padding: 0px !important;
+}
+
+// a {
+// 	  color: #434441;
+// 	  display: inline-block;
+//     transition: all 0.3s ease-in-out;
+//     animation: fadeInTop forwards 0.6s ease-in-out;
+//     opacity: 0;
+// }
+//
+// a:nth-child(1) {
+// 	animation-delay: 0.4s;
+// }
+// a:nth-child(2) {
+// 	animation-delay: 0.6s;
+// }
+// a:nth-child(3) {
+// 	animation-delay: 0.8s;
+// }
+// a:nth-child(4) {
+// 	animation-delay: 1s;
+// }
+// a:nth-child(5) {
+// 	animation-delay: 1.2s;
+// }
+// a:nth-child(6) {
+// 	animation-delay: 1.4s;
+// }
+// a:link {
+//   text-decoration: none;
+// }
+// a:hover {
+//   color: grey;
+// }
+//
+//

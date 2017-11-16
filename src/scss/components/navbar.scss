@@ -1,0 +1,37 @@
+.navbar {
+  height: 50px;
+  font-family: 'amerigo bt';
+  font-size: 25px;
+  font-weight: 800px;
+  background-color: #434441!important;
+}
+
+button {
+  padding: 0;
+  margin: 0 20px;
+  border: none;
+  background: none;
+  color: #F1F4F6;
+  transition-property: font-size;
+  transition-duration: 0.2s;
+}
+
+.underline:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.underline:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
