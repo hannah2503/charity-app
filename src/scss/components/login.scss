@@ -8,15 +8,16 @@
 }
 
 .login-form {
-  border: 2px solid #ef4f3d;
   width: 50%;
   margin: 30px auto;
-  padding: 30px 20px 20px 20px;
-  border-radius: 5px;
-  background-color: #ef4f3d;
+  padding:40px 50px 110px 50px;
+  background-color: #ffffff;
   font-family: 'GT Walsheim';
   font-size: 17px;
   color: #434441;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
 }
 
 .login-title {
@@ -28,9 +29,12 @@
   font-weight: 800;
 }
 
-.input {
-  background-color: white !important;
-}
+// .input {
+//   background-color: white !important;
+//   -webkit-box-shadow: none;
+//   -moz-box-shadow: none;
+//   box-shadow: none;
+// }
 
 .btn {
   background-color: #434441;
@@ -39,4 +43,15 @@
 
 .login {
   margin: 0 auto;
+}
+
+.addUserPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
 }

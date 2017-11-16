@@ -1,4 +1,4 @@
-.background-register {
+.background {
   width: 100%;
   height: 850px;
   background-image: url('../images/login_background.jpg');
@@ -7,7 +7,7 @@
   padding-top: 40px;
 }
 
-.register-title {
+.edit-title {
   width: 100%;
   text-align: center;
   font-family: 'GT Walsheim';
@@ -16,7 +16,7 @@
   font-weight: 800;
 }
 
-.registerPage {
+.editUserPage {
   width: 50%;
   margin: 30px auto;
   padding:40px 50px 110px 50px;
@@ -41,19 +41,13 @@
     padding: 5px;
   }
   .addBtn {
-    float: right;
+    float: left;
     margin: 15px auto;
 
       .btn {
         background-color: #434441;
         color: white;
-        margin: 2px;
     }
   }
-
-    .btnRow {
-      float: left;
-      margin: auto;
-    }
 
   }

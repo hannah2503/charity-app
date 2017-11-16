@@ -1,35 +1,26 @@
-<h1>Your Profile</h1>
+<div class="background">
 
-<button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
-<button class="btn btn-default" ng-click="vm.delete(vm.user)">Delete your profile</button>
-
-<div class="row">
-  <div class="col-md-4">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4 class="card-title">{{ vm.user.username }}</h4>
-        <p class="card-text">{{ vm.user.email }}</p>
-        <p class="card-text">{{ vm.user.userType }}</p>
-        <p><img src="{{ vm.user.image }}"></p>
-      </div>
+  <h1 class="user-title">Your Profile</h1>
+  <div class="profilePage">
+    <div>
+      <img src="{{ vm.user.image }}">
     </div>
+    <div class="profile">
+      <h4>{{ vm.user.username }}</h4>
+      <p>{{ vm.user.email }}</p>
+      <p>{{ vm.user.userType }}</p>
+      <button class="btn" ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add Your Shop!</button>
+      <button class="btn" ui-sref="userEdit({id: vm.user._id})">Edit Your Profile</button>
+      <button class="btn" ng-click="vm.delete(vm.user)">Delete Your Profile</button>
+    </div>
+
   </div>
 </div>
 
-<br>
-
-<button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add your shop!</button>
-
-<br>
-
-<div class="row">
-  <div class="col-md-4" ng-repeat="shop in vm.shops">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h2><em>Your shop!</em></h2>
-        <h4 class="card-title">{{ shop.name }}</h4>
-          <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
-      </div>
-    </div>
+<h1 class="user-title">My Shops</h1>
+<div class="wrapper">
+  <div ng-repeat="shop in vm.shops">
+    <h3>{{ shop.name }}</h3>
+    <button class="btn" ui-sref="shopShow({ id: shop._id })">View This Shop</button>
   </div>
 </div>

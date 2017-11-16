@@ -1,14 +1,18 @@
-
-<div class="registerPage">
-  <h1 class="login-title">Register</h1>
-<form ng-submit="vm.submitForm()" class="login-form">
 <div class="background-register">
+  <h1 class="register-title">Register</h1>
+
+  <div class="registerPage">
+  <form ng-submit="vm.submitForm()">
+
+  <div>
     <label for="username">Username</label>
     <input type="text" name="username" ng-model="vm.user.username">
   </div>
 
-  <label for="userType">Shop Owner or a Donor?</label>
-  <input type="text" name="userType" ng-model="vm.user.userType">
+  <div>
+    <label for="userType">Shop Owner or a Donor?</label>
+    <input type="text" name="userType" ng-model="vm.user.userType">
+  </div>
 
   <div >
     <label for="email">Email</label>
@@ -30,8 +34,10 @@
     <input type="text" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation">
   </div>
 
-  <div >
-    <button type="submit">Register</button>
+  <div class="btnRow">
+    <button type="submit" class="addBtn btn">Register</button>
   </div>
+
 </form>
+</div>
 </div>

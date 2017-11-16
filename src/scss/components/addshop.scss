@@ -7,7 +7,7 @@
   padding-top: 40px;
 }
 
-.register-title {
+.shop-title {
   width: 100%;
   text-align: center;
   font-family: 'GT Walsheim';
@@ -16,7 +16,7 @@
   font-weight: 800;
 }
 
-.registerPage {
+.addShopPage {
   width: 50%;
   margin: 30px auto;
   padding:40px 50px 110px 50px;
@@ -27,33 +27,19 @@
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: 7px 7px 0px #dcc3da;
-
-  input {
-    margin: 2px;
-    width: 100%;
-    padding: 5px;
-  }
-
-  label {
-    border-radius: 5px;
-    margin: 2px;
-    width: 100%;
-    padding: 5px;
-  }
-  .addBtn {
-    float: right;
-    margin: 15px auto;
-
-      .btn {
-        background-color: #434441;
-        color: white;
-        margin: 2px;
+    input {
+      margin: 2px;
+      width: 100%;
+      padding: 5px;
     }
-  }
-
-    .btnRow {
+    label {
+      border-radius: 5px;
+      margin: 2px;
+      width: 100%;
+      padding: 5px;
+    }
+    .addBtn {
       float: left;
-      margin: auto;
+      margin: 15px auto;
     }
-
-  }
+}
