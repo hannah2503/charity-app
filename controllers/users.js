@@ -35,7 +35,7 @@ function usersDelete(req, res) {
   User
     .findByIdAndRemove(req.params.id)
     .exec()
-    .then(user => {
+    .then((user) => {
       if (!user) return res.status(404).json({ message: 'User not found.' });
       return res.sendStatus(204);
     })

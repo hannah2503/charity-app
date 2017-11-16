@@ -13,7 +13,7 @@
       <p>Telephone Number: {{vm.shop.international_phone_number}}</p>
       <p>Email: {{ vm.shop.email }}</p>
       <li><button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button></li>
-      <li><button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button></li>
+      <li><button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.open()">Delete this Shop</button></li>
     </div>
   </div>
 

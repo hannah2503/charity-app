@@ -1,7 +1,15 @@
-UsersDeleteCtrl.$inject = ['$uibModalInstance', 'user', '$state'];
-function UsersDeleteCtrl($uibModalInstance, user, $state) {
-  var vm = this;
+angular
+  .module('charityApp')
+  .controller('usersDeleteCtrl', usersDeleteCtrl);
+
+usersDeleteCtrl.$inject = ['$uibModalInstance', 'User', 'user', '$state', '$stateParams', '$auth', '$rootScope'];
+function usersDeleteCtrl($uibModalInstance, User, user, $state, $stateParams, $auth, $rootScope) {
+  const vm = this;
   vm.user = user;
+  vm.logout = logout;
+  User.get({ id: $stateParams.id }).$promise.then(user => {
+    vm.user = user;
+  });
 
   function closeModal() {
     $uibModalInstance.close();
@@ -13,10 +21,16 @@ function UsersDeleteCtrl($uibModalInstance, user, $state) {
     vm.user
       .$remove()
       .then(() => {
-        $state.go('home');
         $uibModalInstance.close();
+        logout();
+        $rootScope.$broadcast('loggedOut');
       });
+
   }
 
+  function logout() {
+    $auth.logout();
+    $state.go('home');
+  }
   vm.delete = userDelete;
 }
