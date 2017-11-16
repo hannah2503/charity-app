@@ -1,9 +1,15 @@
-.navbar {
-  height: 50px;
-  font-family: 'amerigo bt';
-  font-size: 25px;
-  font-weight: 800px;
+.navbar, .navvy {
+  height: 40px!important;
+  font-family: 'GT Walsheim';
+  font-size: 20px;
+  font-weight: normal;
   background-color: #434441!important;
+  z-index: 100;
+  line-height: 40px
+}
+
+.navbar {
+  margin-bottom: 0;
 }
 
 button {

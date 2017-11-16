@@ -15,7 +15,7 @@
 </head>
 
 <body ng-controller="mainController as vm">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navvy navbar-expand-lg navbar-dark bg-primary">
     <button type="button" class="button" ui-sref="home" ng-if="vm.user">Home</button>
     <button type="button" class="button" ui-sref="userShow({id: vm.user._id})" ng-if="vm.user">Profile</button>
     <button type="button" class="button" ui-sref="shopsIndex" ng-if="vm.user">Shops</button>
