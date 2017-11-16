@@ -6,15 +6,6 @@
   </header>
 </div>
 
-<div class="row" ng-if="!vm.q">
-  <div class="col-md-4" ng-repeat="shop in vm.shops">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4 class="card-title">{{ shop.name }}</h4>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-md-4" ng-repeat="shop in vm.filtered">
@@ -32,3 +23,14 @@
 </div>
 
   <google-map shops="vm.shops"></google-map>
+
+  <div class="row" ng-if="!vm.q">
+    <div class="col-md-4" ng-repeat="shop in vm.shops">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ shop.name }}</h4>
+            <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
+        </div>
+      </div>
+    </div>
+  </div>

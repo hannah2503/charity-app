@@ -1,6 +1,4 @@
-angular
-  .module('charityApp')
-  .controller('mainController', mainController);
+angular.module('charityApp').controller('mainController', mainController);
 
 mainController.$inject = [
   '$state',
@@ -14,7 +12,8 @@ function mainController(
   $scope,
   $location,
   $rootScope,
-  currentUserService) {
+  currentUserService
+) {
   const vm = this;
 
   vm.logout = logout;
@@ -27,7 +26,7 @@ function mainController(
 
   $rootScope.$on('loggedOut', () => {
     vm.user = null;
-    $state.go('login');
+    $state.go('home');
   });
 
   function logout() {
