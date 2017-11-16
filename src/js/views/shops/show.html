@@ -13,9 +13,6 @@ Icon: <img src="{{vm.details.icon}}">
 <p>Items Needed for Sale: {{vm.shop.clothesWanted}}</p>
 <p>Items not sold at this shop: {{vm.shop.clothesNotWanted}}</p>
 
-<p>Created By Id: {{ vm.shop.createdBy }}</p>
-<p>Shop Id: {{ vm.shop._id }}</p>
-
 <button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button>
 <button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
 <hr>
@@ -25,9 +22,9 @@ Icon: <img src="{{vm.details.icon}}">
   <li ng-repeat="comment in vm.shop.comments track by $index">
     <p>Content: {{ comment.content }}</p>
     <p>Created By: {{ comment.createdBy.username }}</p>
-    <!-- <div ng-if="comment.createdBy._id === vm.currentUserId"> -->
+    <div ng-if="comment.createdBy._id === vm.currentUserId">
       <button ng-click="vm.commentDelete(comment._id)">Delete the comment</button>
-    <!-- </div> -->
+    </div>
   </li>
 </ul>
 
@@ -36,10 +33,3 @@ Icon: <img src="{{vm.details.icon}}">
   <input type="text" ng-model="vm.comment.content">
   <input type="submit">
 </form>
-
-
-<!-- <p>This is comment.shop._id: {{ comment.shop._id }}</p>
-<p>This is comment.shop.comment._id: {{ comment.shop.comment._id }}</p>
-<p>This is vm.shop.comments._id: {{ comment._id }}</p>
-<p>This is vm.shop._id: {{ vm.shop._id }}</p> -->
-<!-- <p> Comment Id:  {{ comment._id }}</p> -->
