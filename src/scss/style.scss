@@ -5,41 +5,86 @@
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
+@import "components/navbar";
+@import "components/homepage";
+@import "components/login";
+=======
+
 @import "components/navbar";
 @import "components/homepage";
 @import "components/login";
 
 //hannah added some basic layout style for shop page here
 .shopPage {
-  width: 900px;
   margin: 0 auto;
+  max-width: 900px;
 
-
-.shopLogo {
-  width: 200px;
-}
-
-.shopInfo {
-  width: 900px;
-  float:left;
-  li {
-    float: left;
+  .shopLogo {
+    max-width: 200px;
   }
+
+  .shopInfo {
+    float:left;
+    max-width: 900px;
+
+    li {
+      float: left;
+    }
+  }
+
+  .shopWants {
+    float: left;
+    margin-top: 30px;
+    max-width: 450px;
+
+  }
+
+  .comments {
+    float: left;
+    margin-top: 30px;
+    max-width: 450px;
+  }
+
+}
+>>>>>>> googlemap
+
+//hannah has added add a shop page layout
+
+.addShopPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
 }
 
-.shopWants {
-  float: left;
-  margin-top: 30px;
-  // padding-right: 100px;
-  width: 450px;
+//hannah has added a user form layout
 
+.addUserPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
 }
 
-.comments {
-  float: left;
-  margin-top: 30px;
-  width: 450px;
-}
+//hannah has added a registration layout
 
+.registerPage {
+  margin: auto;
+  max-width: 900px;
+    input {
+      min-width: 400px;
+    }
+    label {
+      min-width: 250px;
+    }
 
 }
