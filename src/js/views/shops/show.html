@@ -1,38 +1,53 @@
-<h1>One Shop</h1>
+<!-- <h1>{{vm.shop.name}}</h1> -->
+<div class="shopPage">
 
 <div class="shopLogo">
   <img class="shopLogo" src="{{vm.shop.icon}}">
 </div>
 
+<div class="shopInfo">
+  <div class="shopDetails">
+    <h3>Shop Info</h3>
+    <p>Shop: {{ vm.shop.name }}</p>
+    <p>About: {{vm.shop.bio}}</p>
+    <p>Address: {{vm.shop.formatted_address}}</p>
+    <p>Telephone Number: {{vm.shop.international_phone_number}}</p>
+    <p>Email: {{ vm.shop.email }}</p>
+    <li><button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button></li>
+    <li><button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button></li>
+  </div>
+</div>
 
-<p>Shop Name: {{ vm.shop.name }}</p>
-<p>Bio: {{vm.shop.bio}}</p>
-<p>Created By: {{ vm.shop.createdBy.username }}</p>
-<p>Address: {{vm.shop.formatted_address}}</p>
-<p>Telephone Number: {{vm.shop.international_phone_number}}</p>
-<p>Email: {{ vm.shop.email }}</p>
+<div class="shopWants">
+  <h3>How You Can Help</h3>
+  <p>We need more: {{vm.shop.clothesWanted}}</p>
+  <p>We have too many: {{vm.shop.clothesNotWanted}}</p>
+</div>
+
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
+      <p>{{ comment.content }}</p>
+      <div >
+        <p>Said {{ comment.createdBy.username }}
+          <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
+        </p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="addComments">
+    <form ng-submit="vm.handleNewComment()">
+      <label for="comments">Add Comment:</label>
+      <input type="text" ng-model="vm.comment.content">
+      <input type="submit">
+    </form>
+  </div>
+
+  </div>
+
+<!-- <google-map shops="vm.shops"></google-map> -->
 
 
-<p>We need more: {{vm.shop.clothesWanted}}</p>
-<p>We have too many: {{vm.shop.clothesNotWanted}}</p>
-
-<button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button>
-<button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
-<hr>
-<h3>Comments</h3>
-
-<ul>
-  <li ng-repeat="comment in vm.shop.comments track by $index">
-    <p>Content: {{ comment.content }}</p>
-    <p>Created By: {{ comment.createdBy.username }}</p>
-    <div ng-if="comment.createdBy._id === vm.currentUserId">
-      <button ng-click="vm.commentDelete(comment._id)">x</button>
-    </div>
-  </li>
-</ul>
-
-<form ng-submit="vm.handleNewComment()">
-  <label for="comments">Add Comment:</label>
-  <input type="text" ng-model="vm.comment.content">
-  <input type="submit">
-</form>
+</div>

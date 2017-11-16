@@ -30,7 +30,8 @@ button {
   margin: 0 20px;
   border: none;
   background: none;
-  color: #F1F4F6;
+  // color: #F1F4F6;
+  color: black;
   transition-property: font-size;
   transition-duration: 0.2s;
 }
@@ -106,7 +107,37 @@ button:hover {
   transition-duration: 0.4s;
 }
 
+//hannah added some basic layout style for shop page here
+.shopPage {
+  width: 900px;
+  margin: 0 auto;
+
 
 .shopLogo {
   width: 200px;
+}
+
+.shopInfo {
+  width: 900px;
+  float:left;
+  li {
+    float: left;
+  }
+}
+
+.shopWants {
+  float: left;
+  margin-top: 30px;
+  // padding-right: 100px;
+  width: 450px;
+
+}
+
+.comments {
+  float: left;
+  margin-top: 30px;
+  width: 450px;
+}
+
+
 }
