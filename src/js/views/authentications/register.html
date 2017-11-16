@@ -1,36 +1,43 @@
+<div class="background-register">
+  <h1 class="register-title">Register</h1>
 
-<div class="registerPage background-register">
-  <h1 class="login-title">Register</h1>
-<form ng-submit="vm.submitForm()" class="login-form">
+  <div class="registerPage">
+  <form ng-submit="vm.submitForm()">
+
   <div>
     <label for="username">Username</label>
-    <input type="text" name="username" ng-model="vm.user.username">
+    <input class="boxshadow" type="text" name="username" ng-model="vm.user.username">
   </div>
-  <label for="userType">Shop Owner or a Donor?</label>
-  <input type="text" name="userType" ng-model="vm.user.userType">
+
+  <div>
+    <label for="userType">Shop Owner or a Donor?</label>
+    <input class="boxshadow" type="text" name="userType" ng-model="vm.user.userType">
+  </div>
 
   <div >
     <label for="email">Email</label>
-    <input type="text" name="email" ng-model="vm.user.email">
+    <input class="boxshadow" type="text" name="email" ng-model="vm.user.email">
   </div>
 
   <div >
     <label for="image">Image</label>
-    <input type="text" name="email" ng-model="vm.user.image">
+    <input class="boxshadow" type="text" name="email" ng-model="vm.user.image">
   </div>
 
   <div >
     <label for="password">Password</label>
-    <input type="text" name="password" ng-model="vm.user.password">
+    <input class="boxshadow" type="text" name="password" ng-model="vm.user.password">
   </div>
 
   <div >
     <label for="passwordConfirmation">Password Confirmation</label>
-    <input type="text" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation">
+    <input class="boxshadow" type="text" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation">
   </div>
 
-  <div >
-    <button type="submit">Register</button>
+  <div>
+    <button type="submit" class="addBtn boton">Register</button>
   </div>
+
 </form>
+</div>
 </div>

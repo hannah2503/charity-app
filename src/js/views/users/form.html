@@ -1,28 +1,30 @@
-<h1>{{vm.title}}</h1>
-<div class="addUserPage">
-<form ng-submit="vm.submit(vm.user)">
-  <div>
-    <label for="username">Username</label>
-    <input type="text" name="username" ng-model="vm.user.username">
-  </div>
+<div class="background">
+  <h1 class="edit-title">{{vm.title}}</h1>
+  <div class="editUserPage">
+    <form ng-submit="vm.submit(vm.user)">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" ng-model="vm.user.username">
+      </div>
 
-  <div>
-    <label for="userType">User Type</label>
-    <input type="text" name="userType" ng-model="vm.user.userType">
-  </div>
+      <div>
+        <label for="userType">User Type</label>
+        <input type="text" name="userType" ng-model="vm.user.userType">
+      </div>
 
-  <div>
-    <label for="email">Email</label>
-    <input type="text" name="email" ng-model="vm.user.email">
-  </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" ng-model="vm.user.email">
+      </div>
 
-  <div>
-    <label for="image">Image</label>
-    <input type="text" name="email" ng-model="vm.user.image">
-  </div>
+      <div>
+        <label for="image">Image</label>
+        <input type="text" name="email" ng-model="vm.user.image">
+      </div>
 
-  <div>
-    <button type="submit">{{vm.title}}</button>
+      <div>
+        <button class="boton addBtn" type="submit">{{vm.title}}</button>
+      </div>
+    </form>
   </div>
-</form>
 </div>

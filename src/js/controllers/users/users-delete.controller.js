@@ -6,7 +6,8 @@ usersDeleteCtrl.$inject = [
   'user',
   '$state',
   '$stateParams',
-  '$auth'
+  '$auth',
+  '$rootScope'
 ];
 function usersDeleteCtrl(
   $uibModalInstance,
@@ -14,10 +15,12 @@ function usersDeleteCtrl(
   user,
   $state,
   $stateParams,
-  $auth
+  $auth,
+  $rootScope
 ) {
   const vm = this;
-
+  vm.user = user;
+  vm.logout = logout;
   User.get({ id: $stateParams.id }).$promise.then(user => {
     vm.user = user;
   });
@@ -29,10 +32,16 @@ function usersDeleteCtrl(
   vm.close = closeModal;
 
   function userDelete() {
-    vm.user.$remove({ id: vm.user._id }).then(() => {
-      $state.go('home');
+    vm.user.$remove().then(() => {
       $uibModalInstance.close();
+      logout();
+      $rootScope.$broadcast('loggedOut');
     });
+  }
+
+  function logout() {
+    $auth.logout();
+    $state.go('home');
   }
   vm.delete = userDelete;
 }

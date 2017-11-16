@@ -2,11 +2,19 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['Shop', '$stateParams', '$state', '$auth'];
-function shopShowController(Shop, $stateParams, $state, $auth) {
+shopShowController.$inject = [
+  'Shop',
+  '$stateParams',
+  '$state',
+  '$auth',
+  '$uibModal'
+];
+function shopShowController(Shop, $stateParams, $state, $auth, $uibModal) {
   const vm = this;
 
-  vm.shop = Shop.get($stateParams);
+  Shop.get({ id: $stateParams.id }).$promise.then(shop => {
+    vm.shop = shop;
+  });
   vm.currentUserId = $auth.getPayload().userId;
 
   vm.delete = shopDelete;
@@ -41,4 +49,18 @@ function shopShowController(Shop, $stateParams, $state, $auth) {
       }
     );
   }
+
+  function openModal() {
+    $uibModal.open({
+      templateUrl: 'js/views/partials/shopDeleteModal.html',
+      controller: 'shopDeleteCtrl as vm',
+      resolve: {
+        shop: () => {
+          return vm.shop;
+        }
+      }
+    });
+  }
+
+  vm.open = openModal;
 }

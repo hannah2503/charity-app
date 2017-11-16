@@ -1,17 +1,14 @@
 const User = require('../models/user');
 
 function usersIndex(req, res) {
-  User
-    .find()
+  User.find()
     .exec()
-    .then((users) =>
-      res.status(200).json(users))
+    .then(users => res.status(200).json(users))
     .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
 function usersShow(req, res) {
-  User
-    .findById(req.params.id)
+  User.findById(req.params.id)
     .exec()
     .then(user => {
       if (!user) return res.status(404).json({ message: 'User not found.' });
@@ -21,8 +18,10 @@ function usersShow(req, res) {
 }
 
 function usersUpdate(req, res) {
-  User
-    .findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+  User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  })
     .exec()
     .then(user => {
       if (!user) return res.status(404).json({ message: 'User not found.' });
@@ -32,8 +31,7 @@ function usersUpdate(req, res) {
 }
 
 function usersDelete(req, res) {
-  User
-    .findByIdAndRemove(req.params.id)
+  User.findByIdAndRemove(req.params.id)
     .exec()
     .then(user => {
       if (!user) return res.status(404).json({ message: 'User not found.' });
