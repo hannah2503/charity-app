@@ -6,6 +6,11 @@
 }
 
 
+.showMap {
+  height: 400px;
+  width: 900px;
+}
+
 @import "components/navbar";
 @import "components/homepage";
 @import "components/login";
