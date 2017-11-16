@@ -1,20 +1,35 @@
+<div class="background">
+
+
 <h1>User Profile</h1>
 
-<button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
-<button class="btn btn-default" ng-click="vm.delete(vm.user)">Delete your profile</button>
-
-<div class="row">
+<div class="row user-card">
   <div class="col-md-4">
-    <div class="card" style="width: 20rem;">
+    <div class="card main-card">
       <div class="card-body">
         <h4 class="card-title">{{ vm.user.username }}</h4>
         <p class="card-text">{{ vm.user.email }}</p>
         <p class="card-text">{{ vm.user.userType }}</p>
-        <p><img src="{{ vm.user.image }}"></p>
+        <div><img class="profile-img" src="{{ vm.user.image }}"></div>
+        <button class="btn btn-default" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
+        <button class="btn btn-default" ng-click="vm.delete(vm.user)">Delete your profile</button>
       </div>
     </div>
+
   </div>
+
+    <div class="wrap-card" ng-repeat="shop in vm.shops">
+      <div class="shop-card" style="width: 20rem;">
+        <div class="card-body">
+          <h4><em>Your shop</em></h4>
+          <h4 class="card-title">{{ shop.name }}</h4>
+            <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
+        </div>
+      </div>
+    </div>
+
 </div>
+
 
 <br>
 
@@ -22,14 +37,6 @@
 
 <br>
 
-<div class="row">
-  <div class="col-md-4" ng-repeat="shop in vm.shops">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4><em>Your shop</em></h4>
-        <h4 class="card-title">{{ shop.name }}</h4>
-          <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
-      </div>
-    </div>
-  </div>
+
+
 </div>
