@@ -20,11 +20,12 @@
     <button type="button" class="button" ng-click="vm.logout()" ng-if="vm.user">Logout</button>
   </nav> -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
-    <button type="button" class="button" ui-sref="shopsIndex">Shops</button>
-    <button type="button" class="button" ui-sref="register" ng-if="!vm.user">Register</button>
-    <button type="button" class="button" ui-sref="login" ng-if="!vm.user">Login</button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button type="button" class="button" ui-sref="home" ng-if="vm.user">Home</button>
+    <button type="button" class="button" ui-sref="userShow({id: vm.user._id})" ng-if="vm.user">Profile</button>
+    <button type="button" class="button" ui-sref="shopsIndex" ng-if="vm.user">Shops</button>
     <button type="button" class="button" ng-click="vm.logout()" ng-if="vm.user">Logout</button>
+    <button type="button" class="button" onclick="history.back(-1)" ng-if="vm.user">Go Back</button>
   </nav>
   <main ui-view></main>
 </body>

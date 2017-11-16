@@ -54,13 +54,3 @@ function shopShowController(Shop, $stateParams, $state, $auth){
   }
 
 }
-// console.log('delete hit');
-// console.log('this is vm', vm);
-// console.log('this is vm.shop.comments', vm.shop.comments); // got an array of objects
-// console.log('this is vm.shop.comments[0]._id', vm.shop.comments[0]._id); // got a string
-// console.log('this is the comment', comment);
-
-// console.log(comment);
-// console.log(vm.shop);
-// console.log('delete button clicked!');
-// Shop.get($stateParams);

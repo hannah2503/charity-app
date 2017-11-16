@@ -29,6 +29,7 @@ function loginController(
 
   function logout() {
     $auth.logout();
-    $state.go('login');
+
+    $state.go('home');
   }
 }
