@@ -10,18 +10,23 @@
         <h4 class="card-title">{{ vm.user.username }}</h4>
         <p class="card-text">{{ vm.user.email }}</p>
         <p class="card-text">{{ vm.user.userType }}</p>
+        <p><img src="{{ vm.user.image }}"></p>
       </div>
     </div>
   </div>
 </div>
 
+<br>
+
 <button class="btn btn-default"  ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">You are a shop owner, click to add your shop!</button>
-<button type="button" class="button" ui-sref="shopsIndex" ng-if="vm.user">All Shops</button>
+
+<br>
 
 <div class="row">
   <div class="col-md-4" ng-repeat="shop in vm.shops">
     <div class="card" style="width: 20rem;">
       <div class="card-body">
+        <h4><em>Your shop!</em></h2>
         <h4 class="card-title">{{ shop.name }}</h4>
           <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
       </div>

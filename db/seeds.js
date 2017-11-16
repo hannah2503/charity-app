@@ -31,7 +31,8 @@ User
     username: 'Catriona',
     email: 'cat@cat.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    image: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAKDAAAAJDliNmVlNDk1LTg1YmYtNDlkNi04OTBlLThkNmI3Yjk0ZGFlMQ.jpg'
   },
   {
     userType: 'Shop Owner',
