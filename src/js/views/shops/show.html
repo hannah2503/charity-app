@@ -1,54 +1,51 @@
 <div class="background">
 
-
   <div class="col-md-4">
     <div class="card main-card">
       <div class="card-body">
-      <h3>Shop Info</h3>
-      <p class="card-title bold">Shop: {{ vm.shop.name }}</p>
-      <p class="card-text">About: {{vm.shop.bio}}</p>
-      <p class="card-text">Address: {{vm.shop.formatted_address}}</p>
-      <p class="card-text">Telephone Number: {{vm.shop.international_phone_number}}</p>
-      <p class="card-text">Email: {{ vm.shop.email }}</p>
-      <li><button  class="btn btn-default prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button></li>
-      <li><button  class="btn btn-default prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button></li>
-
+        <h3>Shop Info</h3>
+        <p class="card-title bold">Shop: {{ vm.shop.name }}</p>
+        <p class="card-text">About: {{vm.shop.bio}}</p>
+        <p class="card-text">Address: {{vm.shop.formatted_address}}</p>
+        <p class="card-text">Telephone Number: {{vm.shop.international_phone_number}}</p>
+        <p class="card-text">Email: {{ vm.shop.email }}</p>
+        <li><button  class="btn btn-default prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button></li>
+        <li><button  class="btn btn-default prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button></li>
+      </div>
     </div>
   </div>
-</div>
-<div class="shopWants">
-  <h3>How You Can Help</h3>
-  <p>We need more: {{vm.shop.clothesWanted}}</p>
-  <p>We have too many: {{vm.shop.clothesNotWanted}}</p>
-</div>
 
-
+  <div class="shopWants">
+    <h3>How You Can Help</h3>
+    <p>We need more: {{vm.shop.clothesWanted}}</p>
+    <p>We have too many: {{vm.shop.clothesNotWanted}}</p>
+  </div>
 
   <div class="wrap-card">
     <div class="shop-card">
       <div class="card-body">
-    <h3 class="card-title bold">Comments</h3>
-    <ul>
-      <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
-        <p  class="view-shop">{{ comment.content }}</p>
-        <div >
-          <p  class="view-shop">Said {{ comment.createdBy.username }}
-            <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
-          </p>
-        </div>
-      </li>
-    </ul>
+        <h3 class="card-title bold">Comments</h3>
+        <ul>
+          <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
+            <p  class="view-shop">{{ comment.content }}</p>
+            <div >
+              <p  class="view-shop">Said {{ comment.createdBy.username }}
+                <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <div class="addComments">
+    <form ng-submit="vm.handleNewComment()">
+      <label  class="view-shop" for="comments">Add Comment:</label>
+      <input type="text" ng-model="vm.comment.content">
+      <input type="submit">
+    </form>
   </div>
-  </div>
-</div>
-<div class="addComments">
-<form ng-submit="vm.handleNewComment()">
-  <label  class="view-shop" for="comments">Add Comment:</label>
-  <input type="text" ng-model="vm.comment.content">
-  <input type="submit">
-</form>
-</div>
 
   <!-- <google-map shops="vm.shop" id="showMap"></google-map> -->
 </div>

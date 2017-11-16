@@ -29,7 +29,6 @@ function Router(
       templateUrl: 'js/views/shops/index.html',
       controller: 'shopsIndexController as vm'
     })
-    //form for creating a shop
     .state('shopForm', {
       url: '/shops/form',
       templateUrl: 'js/views/shops/form.html',
@@ -45,7 +44,6 @@ function Router(
       templateUrl: 'js/views/shops/show.html',
       controller: 'shopShowController as vm'
     })
-    //form for editing a shop
     .state('shopEdit',{
       url: '/shops/:id/form',
       templateUrl: 'js/views/shops/form.html',

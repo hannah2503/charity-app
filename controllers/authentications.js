@@ -33,7 +33,6 @@ function authenticationsLogin(req, res){
         user
       });
     })
-    // .catch(next);
     .catch(() => res.status(500).json({ message: 'Woops, something went wrong.' }));
 }
 

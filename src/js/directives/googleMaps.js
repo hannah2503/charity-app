@@ -54,7 +54,7 @@ function googleMap($window, $timeout) {
         infoWindow.setContent(
           browserHasGeolocation
             ? 'Error: The Geolocation service failed.'
-            : "Error: Your browser doesn't support geolocation."
+            : 'Error: Your browser doesn\'t support geolocation.'
         );
         infoWindow.open(map);
       }
@@ -71,15 +71,9 @@ function googleMap($window, $timeout) {
             content: `
               <div class="infowindow">
                 <h3 class="card-title bold">${shop.name}</h3>
-                <p class="view-shop"><strong>Address: ${
-                  shop.formatted_address
-                }</strong></p>
-                <p class="view-shop"><strong>Needed: ${
-                  shop.clothesWanted
-                }</strong></p>
-                <p class="view-shop"><strong>Not needed: ${
-                  shop.clothesNotWanted
-                }</strong></p>
+                <p class="view-shop"><strong>Address: ${shop.formatted_address}</strong></p>
+                <p class="view-shop"><strong>Needed: ${shop.clothesWanted}</strong></p>
+                <p class="view-shop"><strong>Not needed: ${shop.clothesNotWanted}</strong></p>
               </div>`
           });
 

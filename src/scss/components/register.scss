@@ -1,44 +1,41 @@
 .background-register {
-  width: 100%;
-  height: 850px;
   background-image: url('../images/login_background.jpg');
-  background-size: 60%;
   background-repeat: repeat;
+  background-size: 60%;
+  height: 850px;
   padding-top: 40px;
+  width: 100%;
 }
 
 .register-title {
-  width: 100%;
-  text-align: center;
+  color: #434441;
   font-family: 'GT Walsheim';
   font-size: 40px;
-  color: #434441;
   font-weight: 800;
+  text-align: center;
+  width: 100%;
 }
 
 .registerPage {
-  width: 50%;
-  margin: 30px auto;
-  padding:40px 50px 110px 50px;
   background-color: #ffffff;
-  font-family: 'GT Walsheim';
-  font-size: 17px;
-  color: #434441;
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: 7px 7px 0px #dcc3da;
-
+  color: #434441;
+  font-family: 'GT Walsheim';
+  font-size: 17px;
+  margin: 30px auto;
+  padding:40px 50px 110px 50px;
+  width: 50%;
   input {
     margin: 2px;
-    width: 100%;
     padding: 5px;
+    width: 100%;
 
   }
-
   .boxshadow {
     box-shadow:  none;
   }
-
   label {
     border-radius: 5px;
     margin: 2px;
@@ -48,15 +45,11 @@
   .addBtn {
     float: right;
     margin: 15px auto;
-
   }
-
-
-
-    .boton {
-      border: 1px solid #434441;
-      color: #ffffff;
-      margin-top: 20px;
-      width: 100%;
-    }
+  .boton {
+    border: 1px solid #434441;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 100%;
   }
+}

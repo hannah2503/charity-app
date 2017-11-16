@@ -1,6 +1,7 @@
 .profile-img {
-  width: 200px;
   border: 3px solid #434441;
+  width: 200px;
+
 }
 
 .user-card {
@@ -8,22 +9,22 @@
 }
 
 .main-card {
-  width: 40rem;
-  float: left;
-  margin: 50px 0 50px 100px;
-  height: 400px;
-  display: inline!important;
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: 7px 7px 0px #dcc3da;
+  display: inline!important;
+  float: left;
+  height: 400px;
+  margin: 50px 0 50px 100px;
+  width: 40rem;
   .add-shop {
-    width: 100%;
-    position: absolute;
+    background-color: #434441;
     bottom: 0px;
     display: inline-block;
-    background-color: #434441;
     height: 34px;
     line-height: 34px;
+    position: absolute;
+    width: 100%;
   }
 }
 
@@ -52,17 +53,17 @@ h4 {
 }
 
 .wrap-card {
-  height:400px;
-  overflow:hidden;
-  overflow-y: scroll;
-  width: 400px;
-  float: right;
-  display: inline;
-  margin: 50px 100px 50px 0px;
   background-color: white!important;
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: -7px 7px 0px #dcc3da;
+  float: right;
+  display: inline;
+  height:400px;
+  margin: 50px 100px 50px 0px;
+  overflow:hidden;
+  overflow-y: scroll;
+  width: 400px;
 }
 
 
@@ -73,17 +74,17 @@ h4 {
 
 
 .main-card > .edit-btn {
-  position: absolute;
   bottom: 34px;
   background-color: #f9a943;
-  text-align: center;
-  width: 100%;
   display: inline-block;
   margin: 0px!important;
    .btn {
   background-color: #f9a943;
   border: 1px none #f9a943;
 }
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .card-body > .card-text {
@@ -91,7 +92,6 @@ h4 {
   font-size: 16px;
   font-style: italic;
 }
-
 
 .shop-card{
   height: 100%;

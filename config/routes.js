@@ -5,10 +5,16 @@ const authentications = require('../controllers/authentications');
 const users = require('../controllers/users');
 const shops = require('../controllers/shops');
 
-router.route('/register').post(authentications.register);
-router.route('/login').post(authentications.login);
+router
+  .route('/register')
+  .post(authentications.register);
+router
+  .route('/login')
+  .post(authentications.login);
 
-router.route('/users').get(secureRoute, users.index);
+router
+  .route('/users')
+  .get(secureRoute, users.index);
 router
   .route('/users/:id')
   .get(secureRoute, users.show)
@@ -25,7 +31,9 @@ router
   .put(secureRoute, shops.update)
   .delete(secureRoute, shops.delete);
 
-router.route('/shops/:id/comments').post(secureRoute, shops.createComment);
+router
+  .route('/shops/:id/comments')
+  .post(secureRoute, shops.createComment);
 router
   .route('/shops/:id/comments/:commentId')
   .delete(secureRoute, shops.deleteComment);

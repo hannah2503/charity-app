@@ -1,11 +1,11 @@
 .navbar, .navvy {
-  height: 40px!important;
+  background-color: #434441!important;
   font-family: 'GT Walsheim';
   font-size: 20px;
   font-weight: normal;
-  background-color: #434441!important;
+  height: 40px!important;
+  line-height: 40px;
   z-index: 100;
-  line-height: 40px
 }
 
 .navbar {
@@ -13,31 +13,32 @@
 }
 
 button {
-  padding: 0;
-  margin: 0 20px;
   border: none;
   background: none;
   color: #F1F4F6;
+  margin: 0 20px;
+  padding: 0;
   transition-property: font-size;
   transition-duration: 0.2s;
 }
 
 .underline:before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  bottom: 2px;
-  left: 0;
   background-color: white;
-  visibility: hidden;
+  bottom: 2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
+  visibility: hidden;
 }
 
 .underline:hover:before {
+  transform: scaleX(1);
   visibility: visible;
   -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+
 }
