@@ -9,9 +9,9 @@
       <h4>{{ vm.user.username }}</h4>
       <p>{{ vm.user.email }}</p>
       <p>{{ vm.user.userType }}</p>
-      <button class="btn" ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add Your Shop!</button>
-      <button class="btn" ui-sref="userEdit({id: vm.user._id})">Edit Your Profile</button>
-      <button class="btn" ng-click="vm.delete(vm.user)">Delete Your Profile</button>
+      <button class="boton" ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add Your Shop!</button>
+      <button class="boton" ui-sref="userEdit({id: vm.user._id})">Edit Your Profile</button>
+      <button class="boton" ng-click="vm.delete(vm.user)">Delete Your Profile</button>
     </div>
 
   </div>
@@ -21,6 +21,6 @@
 <div class="wrapper">
   <div ng-repeat="shop in vm.shops">
     <h3>{{ shop.name }}</h3>
-    <button class="btn" ui-sref="shopShow({ id: shop._id })">View This Shop</button>
+    <button class="boton" ui-sref="shopShow({ id: shop._id })">View This Shop</button>
   </div>
 </div>

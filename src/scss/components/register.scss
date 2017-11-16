@@ -32,6 +32,11 @@
     margin: 2px;
     width: 100%;
     padding: 5px;
+
+  }
+
+  .boxshadow {
+    box-shadow:  none;
   }
 
   label {
@@ -44,16 +49,14 @@
     float: right;
     margin: 15px auto;
 
-      .btn {
-        background-color: #434441;
-        color: white;
-        margin: 2px;
-    }
   }
 
-    .btnRow {
-      float: left;
-      margin: auto;
-    }
 
+
+    .boton {
+      border: 1px solid #434441;
+      color: #ffffff;
+      margin-top: 20px;
+      width: 100%;
+    }
   }

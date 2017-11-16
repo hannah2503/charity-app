@@ -29,29 +29,16 @@
   font-weight: 800;
 }
 
-// .input {
-//   background-color: white !important;
-//   -webkit-box-shadow: none;
-//   -moz-box-shadow: none;
-//   box-shadow: none;
-// }
-
-.btn {
-  background-color: #434441;
-  color: white;
+.boton {
+  border: 1px solid #434441;
+  background: #434441;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 10px;
+  width: 100%;
 }
 
-.login {
-  margin: 0 auto;
-}
-
-.addUserPage {
-  margin: auto;
-  max-width: 900px;
-    input {
-      min-width: 400px;
-    }
-    label {
-      min-width: 250px;
-    }
-}
+input {
+  box-shadow: none;
+};
