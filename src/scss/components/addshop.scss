@@ -38,8 +38,14 @@
       width: 100%;
       padding: 5px;
     }
-    .addBtn {
-      float: left;
-      margin: 15px auto;
-    }
+
+      .boton {
+        border: 1px solid #434441;
+        background: #434441;
+        color: #ffffff;
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+      }
+
 }
