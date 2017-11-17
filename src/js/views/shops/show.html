@@ -3,6 +3,7 @@
   <div class="col-md-4">
     <div class="card main-card">
       <div class="card-body">
+      <img class="icon-shop" src="{{vm.shop.icon}}">
       <h3 class="card-title bold">Shop Info</h3>
       <p class="card-title bold">Shop: {{ vm.shop.name }}</p>
       <p class="card-text">About: {{vm.shop.bio}}</p>
@@ -34,7 +35,7 @@
             <p  class="view-shop">{{ comment.content }}</p>
             <div >
               <p  class="view-shop">Said {{ comment.createdBy.username }}
-                <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
+                <button class="x" ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
               </p>
             </div>
           </li>
@@ -43,21 +44,11 @@
     </div>
   </div>
 
-  <!-- <div class="addComments">
-    <form ng-submit="vm.handleNewComment()">
-      <label  class="view-shop" for="comments">Add Comment:</label>
-      <input type="text" ng-model="vm.comment.content">
-      <input type="submit">
-    </form>
-  </div> -->
-<!-- <div class="addComments"> -->
 <form class="comment-form" ng-submit="vm.handleNewComment()">
   <label class="add-comment" for="comments">Add Comment:</label>
   <br>
   <input type="text" class="comment com-sub" ng-model="vm.comment.content">
   <input type="submit" class="com-sub">
 </form>
-<!-- <div class="map-div">
-  <google-map shops="vm.shop" id="showMap"></google-map>
-</div> -->
+
 </div>
