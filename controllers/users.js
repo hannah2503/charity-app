@@ -5,17 +5,17 @@ function usersIndex(req, res) {
     .exec()
     .then((users) =>
       res.status(200).json(users))
-    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
+    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
 function usersShow(req, res) {
   User.findById(req.params.id)
     .exec()
     .then(user => {
-      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
+      if (!user) return res.status(404).json({ message: 'user not found' });
       return res.status(200).json(user);
     })
-    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
+    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
 function usersUpdate(req, res) {
@@ -25,19 +25,19 @@ function usersUpdate(req, res) {
   })
     .exec()
     .then(user => {
-      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
+      if (!user) return res.status(404).json({ message: 'user not found' });
       return res.status(200).json({ user });
     })
-    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
+    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
 function usersDelete(req, res) {
   User.findByIdAndRemove(req.params.id)
     .exec()
-    .then((user) => {
-      if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
+    .then(() => {
+      return res.status(200).json({ message: 'user successfully deleted!' });
     })
-    .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
+    .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }
 
 module.exports = {
