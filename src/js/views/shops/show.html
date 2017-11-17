@@ -1,6 +1,5 @@
 <div class="background">
 
-
   <div class="col-md-4">
     <div class="card main-card">
       <div class="card-body">
@@ -29,21 +28,28 @@
   <div class="wrap-card">
     <div class="shop-card">
       <div class="card-body">
-    <h3 class="card-title bold">Comments</h3>
-    <ul>
-      <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
-        <p  class="view-shop">{{ comment.content }}</p>
-        <div >
-          <p  class="view-shop">Said {{ comment.createdBy.username }}
-            <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
-          </p>
-        </div>
-      </li>
-    </ul>
+        <h3 class="card-title bold">Comments</h3>
+        <ul>
+          <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
+            <p  class="view-shop">{{ comment.content }}</p>
+            <div >
+              <p  class="view-shop">Said {{ comment.createdBy.username }}
+                <button ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  </div>
-  </div>
-</div>
+  <!-- <div class="addComments">
+    <form ng-submit="vm.handleNewComment()">
+      <label  class="view-shop" for="comments">Add Comment:</label>
+      <input type="text" ng-model="vm.comment.content">
+      <input type="submit">
+    </form>
+  </div> -->
 <!-- <div class="addComments"> -->
 <form class="comment-form" ng-submit="vm.handleNewComment()">
   <label class="add-comment" for="comments">Add Comment:</label>

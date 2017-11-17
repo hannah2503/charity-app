@@ -1,41 +1,39 @@
 .map {
-    z-index: 1;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    padding: 0px;
     border-width: 0px;
-    margin: 0px;
+    height: 100vh;
     left: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
     top: 0px;
+    width: 100%;
+    z-index: 1;
 }
 
 .map-nav {
-  position: absolute;
-  z-index: 2;
-  top: 10px;
   left: 10px;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
 }
 
-
-
 .find {
-  height: 70px;
-  width: 180px;
-  font-weight: 600;
-  margin: 30px 50px 30px 15px;
-  width: 300px;
-  line-height: 70px;
-  text-align: center;
-  font-family: 'GT Walsheim';
-  font-size: 27px;
-  color: #434441;
-  font-weight: 800;
   background-color: white;
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: 7px 7px 0px #dcc3da;
+  color: #434441;
+  height: 70px;
+  font-family: 'GT Walsheim';
+  font-size: 27px;
+  font-weight: 600;
+  font-weight: 800;
+  line-height: 70px;
+  margin: 30px 50px 30px 15px;
   margin: 30px 50px 50px 50px;
+  text-align: center;
+  width: 180px;
+  width: 300px;
 }
 
 .index {
@@ -45,40 +43,39 @@
 }
 
 .underline {
-  text-decoration: underline;
   font-family: 'amerigo bt';
   font-size: 16px;
   font-style: italic;
   font-weight: 800;
+  text-decoration: underline;
 }
 
 .shop-search {
-  height:390px;
-  overflow:hidden;
-  overflow-y: scroll;
-  width: 300px;
-  display: inline;
-  margin: 30px 50px 50px 50px;
   background-color: white;
   border: 3px solid #434441;
   border-radius: 0px;
   box-shadow: 7px 7px 0px #dcc3da;
+  display: inline;
   display: block!important;
+  height:390px;
+  overflow:hidden;
+  overflow-y: scroll;
+  margin: 30px 50px 50px 50px;
   position: relative;
+  width: 300px;
   z-index: 2;
 }
 
 .search {
-  margin: 30px 50px 40px 50px;
+  border: 1px none white;
+  color: black;
   display: block!important;
-  position: relative;
-  width: 300px;
   font-family: 'amerigo bt';
   font-style: italic;
   font-size: 20px;
-  border: 1px none white;
-  color: black;
   height: 35px;
   line-height: 35px;
-
+  margin: 30px 50px 40px 50px;
+  position: relative;
+  width: 300px;
 }

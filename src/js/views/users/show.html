@@ -1,6 +1,7 @@
 <div class="background">
 
-<h1 class="login-title">Your Profile</h1>
+  <h1 class="login-title">Your Profile</h1>
+
   <div class="col-md-4">
     <div class="card main-card">
       <div class="card-body">
@@ -16,18 +17,26 @@
       <button class="add-shop prof" ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add your shop!</button>
     </div>
 
+      <!-- <div class="edit-btn">
+        <button class="btn btn-default prof" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
+        <button class="btn btn-default prof" ng-click="vm.open()">Delete your profile</button>
+      </div>
+
+      <button class="add-shop prof" ng-if="vm.user.userType === 'Shop Owner'" ui-sref="shopForm">Add your shop!</button> -->
+
+    </div>
 
 
-  </div>
   <div class="wrap-card">
     <div ng-repeat="shop in vm.shops">
       <div class="shop-card">
         <div class="card-body">
           <h4><em>Your shop</em></h4>
           <h4 class="card-title bold">{{ shop.name }}</h4>
-            <p class="view-shop" ui-sref="shopShow({ id: shop._id })">View this shop</p>
+          <p class="view-shop" ui-sref="shopShow({ id: shop._id })">View this shop</p>
         </div>
       </div>
     </div>
   </div>
+
 </div>
