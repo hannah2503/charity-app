@@ -1,6 +1,8 @@
 .profile-img {
   border: 3px solid #434441;
   width: 200px;
+  height: 200px;
+  overflow: hidden;
 
 }
 
@@ -17,6 +19,7 @@
   height: 400px;
   margin: 50px 0 50px 100px;
   width: 40rem;
+  overflow-y: scroll;
   .add-shop {
     background-color: #434441;
     bottom: 0px;
@@ -29,7 +32,7 @@
 }
 
 .view-shop {
-  font-family: 'amerigo bt';
+  font-family: 'GT Walsheim';
   font-size: 16px;
   font-style: italic;
 
@@ -92,7 +95,7 @@ h4 {
 }
 
 .card-body > .card-text {
-  font-family: 'amerigo bt';
+  font-family: 'GT Walsheim';
   font-size: 16px;
   font-style: italic;
 }
