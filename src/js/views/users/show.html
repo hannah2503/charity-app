@@ -9,7 +9,7 @@
         <p class="card-text">{{ vm.user.userType }}</p>
         <div><img class="profile-img" src="{{ vm.user.image }}"></div>
       </div>
-      <div class="edit-btn">
+    <div class="edit-btn">
       <button class="btn btn-default prof" ui-sref="userEdit({id: vm.user._id})">Edit your profile</button>
       <button class="btn btn-default prof" ng-click="vm.open()">Delete your profile</button>
     </div>

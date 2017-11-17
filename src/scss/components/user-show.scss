@@ -75,14 +75,16 @@ h4 {
 .main-card > .edit-btn {
   position: absolute;
   bottom: 34px;
-  background-color: #f9a943;
+  background-color: white;
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-top: 0px solid #434441;
   margin: 0px!important;
    .btn {
-  background-color: #f9a943;
-  border: 1px none #f9a943;
+  background-color: white;
+  border-color: white;
+
 }
 }
 
