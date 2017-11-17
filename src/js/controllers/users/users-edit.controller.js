@@ -14,12 +14,15 @@ function usersEditController(User, $stateParams, $state){
     .then(user => {
       vm.user = user;
     });
-  vm.submit = () => {
+
+  vm.submit = userUpdate;
+
+  function userUpdate() {
     User
       .update({id: $stateParams.id}, vm.user)
       .$promise
       .then(()=> {
         $state.go('userShow', {id: $stateParams.id});
       });
-  };
+  }
 }
