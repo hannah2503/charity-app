@@ -34,14 +34,8 @@ function usersUpdate(req, res) {
 function usersDelete(req, res) {
   User.findByIdAndRemove(req.params.id)
     .exec()
-<<<<<<< HEAD
     .then((user) => {
       if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
-=======
-    .then(user => {
-      if (!user) return res.status(404).json({ message: 'User not found.' });
->>>>>>> bde03876c1cc173349a742ab55323ad1a0707d47
-      return res.sendStatus(204);
     })
     .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));
 }

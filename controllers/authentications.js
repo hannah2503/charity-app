@@ -15,13 +15,7 @@ function authenticationsRegister(req, res) {
         user
       });
     })
-<<<<<<< HEAD
     .catch(() => res.status(500).json({ message: 'Whoops, something went wrong!' }));
-=======
-    .catch(() =>
-      res.status(500).json({ message: 'Woops, something went wrong!' })
-    );
->>>>>>> bde03876c1cc173349a742ab55323ad1a0707d47
 }
 
 function authenticationsLogin(req, res) {
@@ -41,13 +35,7 @@ function authenticationsLogin(req, res) {
         user
       });
     })
-<<<<<<< HEAD
     .catch(() => res.status(500).json({ message: 'Whoops, something went wrong.' }));
-=======
-    .catch(() =>
-      res.status(500).json({ message: 'Woops, something went wrong.' })
-    );
->>>>>>> bde03876c1cc173349a742ab55323ad1a0707d47
 }
 
 module.exports = {

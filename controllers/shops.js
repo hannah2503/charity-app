@@ -68,14 +68,7 @@ function deleteCommentRoute(req, res, next) {
       const comment = shop.comments.id(req.params.commentId);
       comment.remove();
       shop.save();
-<<<<<<< HEAD
       return res.status(200).json({ message: 'Your comment was successfully deleted. Please leave another again soon!'});
-=======
-
-      return res
-        .status(200)
-        .json({ message: 'comment was successfully deleted.' });
->>>>>>> bde03876c1cc173349a742ab55323ad1a0707d47
     })
     .catch(next);
 }
