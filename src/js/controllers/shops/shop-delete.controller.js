@@ -1,9 +1,21 @@
-angular
-  .module('charityApp')
-  .controller('shopDeleteCtrl', shopDeleteCtrl);
+angular.module('charityApp').controller('shopDeleteCtrl', shopDeleteCtrl);
 
-shopDeleteCtrl.$inject = ['$uibModalInstance', 'Shop', 'shop', '$state', '$stateParams', 'currentUserService'];
-function shopDeleteCtrl($uibModalInstance, Shop, shop, $state, $stateParams, currentUserService) {
+shopDeleteCtrl.$inject = [
+  '$uibModalInstance',
+  'Shop',
+  'shop',
+  '$state',
+  '$stateParams',
+  'currentUserService'
+];
+function shopDeleteCtrl(
+  $uibModalInstance,
+  Shop,
+  shop,
+  $state,
+  $stateParams,
+  currentUserService
+) {
   const vm = this;
   vm.shop = shop;
   vm.user = currentUserService.currentUser;
@@ -18,13 +30,10 @@ function shopDeleteCtrl($uibModalInstance, Shop, shop, $state, $stateParams, cur
   vm.close = closeModal;
 
   function shopDelete() {
-    vm.shop
-      .$remove()
-      .then(() => {
-        $state.go('shopsIndex');
-        $uibModalInstance.close();
-      });
-
+    vm.shop.$remove().then(() => {
+      $state.go('shopsIndex');
+      $uibModalInstance.close();
+    });
   }
   vm.delete = shopDelete;
 }

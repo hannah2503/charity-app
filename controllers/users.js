@@ -1,8 +1,7 @@
 const User = require('../models/user');
 
 function usersIndex(req, res) {
-  User
-    .find()
+  User.find()
     .exec()
     .then((users) =>
       res.status(200).json(users))
@@ -10,8 +9,7 @@ function usersIndex(req, res) {
 }
 
 function usersShow(req, res) {
-  User
-    .findById(req.params.id)
+  User.findById(req.params.id)
     .exec()
     .then(user => {
       if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
@@ -21,8 +19,10 @@ function usersShow(req, res) {
 }
 
 function usersUpdate(req, res) {
-  User
-    .findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+  User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  })
     .exec()
     .then(user => {
       if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
@@ -32,11 +32,15 @@ function usersUpdate(req, res) {
 }
 
 function usersDelete(req, res) {
-  User
-    .findByIdAndRemove(req.params.id)
+  User.findByIdAndRemove(req.params.id)
     .exec()
+<<<<<<< HEAD
     .then((user) => {
       if (!user) return res.status(404).json({ message: 'We couldn\'t find this user. Please try again!' });
+=======
+    .then(user => {
+      if (!user) return res.status(404).json({ message: 'User not found.' });
+>>>>>>> bde03876c1cc173349a742ab55323ad1a0707d47
       return res.sendStatus(204);
     })
     .catch(() => res.status(500).json({ message: 'Oh no! Something went wrong. Please try again!' }));

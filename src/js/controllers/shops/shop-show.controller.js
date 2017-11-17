@@ -2,7 +2,13 @@ angular
   .module('charityApp')
   .controller('shopShowController', shopShowController);
 
-shopShowController.$inject = ['Shop', '$stateParams', '$state', '$auth', '$uibModal'];
+shopShowController.$inject = [
+  'Shop',
+  '$stateParams',
+  '$state',
+  '$auth',
+  '$uibModal'
+];
 function shopShowController(Shop, $stateParams, $state, $auth, $uibModal) {
   const vm = this;
 

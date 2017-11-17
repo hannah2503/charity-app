@@ -1,14 +1,13 @@
-.google-map {
-  height: 600px;
-  width: 600px;
-  display: inline-block;
-  margin: 0 auto;
-}
 
-@import "components/editUserPage";
-@import "components/addshop";
-@import "components/register";
-@import "components/login";
+
 
 @import "components/navbar";
 @import "components/homepage";
+@import "components/login";
+@import "components/register";
+@import "components/user-show";
+@import "components/index";
+@import "components/map";
+@import "components/shop";
+@import "components/editUserPage";
+@import "components/addshop";
