@@ -1,4 +1,4 @@
-# WDI_GROUP_PROJECT
+# WDI_GROUP_PROJECT - TO BE EDITED!!
 SUMMARY
 
 We have the owner and the viewer, both are users and register and login.
