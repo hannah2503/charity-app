@@ -1,71 +1,21 @@
-# WDI_GROUP_PROJECT - TO BE EDITED!!
-SUMMARY
+For Module Three of the General Assembly Web Development Immersive we were tasked with developing a MEAN stack application, in groups of three.
+Our brief was to create a fully restful MEAN stack web application with authentication and features such as ratings or comments.
 
-We have the owner and the viewer, both are users and register and login.
+At the idea creation stage, we agreed on a concept for our project based on common interests. We decided to create an app for charity, which would aim to address the issue of charity shops receiving bags of items which were of no use to it, i.e. their customers would not be likely to purchase those items, thus making no profit for the charity. Through creating an online platform where charity shops could create their own profiles and communicate which items they had need of (i.e. were in demand by customers), and which items they had enough of, or were unpopular, we could increase the likelihood of charities receiving the items they needed. Additionally, we could enable customers/donors to access this platform and to search for charity shops near them alongside this personalised information.
 
-The owner can create a new shop!
+In the planning stage, we used wire-framing (Balsamiq) and pseudocode to plan out our app. We considered the user experience in each scenario and ensured we were all agreed on the routes and layout of the pages. We additionally mapped out and added each individual task required on Trello, marking these in order of priority i.e. red for critical, orange for preferrable to have, and green for desirable. Only when the planning phase was complete did we move on to the next stage, of development.
 
-The owner can say which things they have, and which they need!
-The owner can edit or delete their shop!
+At the development stage, I found I was comfortable with setting up the core app, with JavaScript on the back end and Angular on the front end. I encountered some interesting learning points from a technical perspective, some which were easy, some less so. I discovered how to create a back button, which was extremely easy! I also created a delete modal, that appeared whenever the user tried to delete their profile, asking if they were sure they wanted to do it. While this was straightforward enough, it proved tricky to subsequently log the user out of the app. I learned that in order to do so, it was necessary to send a broadcast message from the delete controller on the front end, stating that the user was now logged out, which was then picked up by the main controller, and carried out.
 
-Both can search for shops with their postcode!
+I also learned that accessing the user id can be tricky depending on where you are calling it in the app. I found that you can inject $Auth into the corresponding controller, and use the payload (the jwt token generated upon log-in) to access the user id. I additionally learned how to carry out TDD, testing my code works as you develop it, and found that this really helped me both to focus on the purpose of each part of code, and to have confidence that the code I added to the codebase was completely working.
 
-Both can write comments under the shops!
+Additionally, my learning points from a soft skill perspective, were the extent to which communication is key for effective group work! I enjoyed using visual communication tools such as Trello, and consistent updates to each other to ensure we were always working on different tasks, that we were aware of who and what we were dependent on for our task, and to ensure we didn't encounter any tricky merge conflicts, by merging regularly. We also ensured to offer each other support, to note if one person became stuck or stressed, and to talk out the issue with them until they were back on track again. This effective communication meant our group moved along very smoothly and overcame any bumps along the road.
 
-.........................................................................................................
-DETAIL
+Developing this full stack restful app with my group was a very positive and enjoyable experience, and a true learning experience.
 
-We have the owner and the viewer, both are users and register and login.
-
-The user first lands on the homepage, three options presented (register or login), or search for shop
-If selects login, go to login page (form)
-User must complete all fields: email, password
-
-If selects register go to register page (form), need to select whether shop owner or donor
-User must complete all fields: username, email, password, userType
-
-If unsuccessful user is given error message and redirected to login page
-
-If successful user is logged in
-
-If user is shop owner on log in they go to their profile
-On profile they can create a new shop, see all shops, or view their existing shop
-On creating a shop (or editing) they can select what they have and what they need from categories
-On creating a shop they will complete all fields for name, address, email, phone number, What they have, What they need, optional image, optional more information
-On their existing shop they can edit or delete it
-On all shops they can search using postcode for nearby shops, click on icon to see individual shop, comment on individual shop
-
-If user is donor brought to profile page
-They see all comments here they have posted (referenced by 'created by')
-There is a button here to go to all shops
-They can search for shops using postcode
-They can click on icon to see individual shop
-They can't see the owner's profile page, edit and delete functions
-They can comment on the individual shop
-User will click on comment button, textbox will appear, they can write a new comment. They can edit or delete their comment.
-
-If they go directly to shops without logging in can see all info but not comment. Could have box saying log in or register to join the conversation.
-
-Users can logout
-
-
-//Breaking down tasks
-
-Authentication split into back and front
-back end routes first - log-in and register
-Follow the express  auth lesson notes
-
-
-Then
-Someone writes tests for those end points
-
-
-at the same time
-front end authentication can begin - satellites, ui router  - view
-
-
-Then restful routes back end,
-testing
-at same time front end views can begin 
-
-Each resource to be split into two - back and front
+![catatwork](https://user-images.githubusercontent.com/31046466/33245313-d874a5b2-d2fd-11e7-9a7b-217ac7851764.jpg)
+![catcamatwork](https://user-images.githubusercontent.com/31046466/33245419-8fe1afb4-d2ff-11e7-9833-ebc4346d924b.jpg)
+![planning](https://user-images.githubusercontent.com/31046466/33245430-a1e66d30-d2ff-11e7-83b2-fbbde3d6d023.jpg)
+![trello2](https://user-images.githubusercontent.com/31046466/33245432-b15c1076-d2ff-11e7-8650-0fc2bf993285.png)
+<img width="1680" alt="screen shot 2017-11-16 at 14 15 04" src="https://user-images.githubusercontent.com/31046466/33245442-d2f3d7d2-d2ff-11e7-912e-d285c0a9046b.png">
+![insomnia](https://user-images.githubusercontent.com/31046466/33245454-e7506e7a-d2ff-11e7-81dd-1f3d0d4f897f.png)
