@@ -1,10 +1,7 @@
-angular
-  .module('charityApp')
-  .directive('googleMap', googleMap);
+angular.module('charityApp').directive('googleMap', googleMap);
 
 googleMap.$inject = ['$window', '$timeout'];
 function googleMap($window, $timeout) {
-
   return {
     restrict: 'E',
     replace: true,
@@ -24,36 +21,42 @@ function googleMap($window, $timeout) {
       $timeout(loopOverShops, 100);
 
       function loopOverShops() {
-        scope.shops.forEach(shop => {
-          console.log(shop);
-          createMarker(shop);
-        });
+        if (scope.shops.length > 0) {
+          scope.shops.forEach(shop => {
+            createMarker(shop);
+          });
+        } else {
+          createMarker(scope.shops);
+        }
       }
 
       var infowindow = new $window.google.maps.InfoWindow();
 
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(true, map.getCenter());
-        });
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            map.setCenter(pos);
+          },
+          function() {
+            handleLocationError(true, map.getCenter());
+          }
+        );
       } else {
         handleLocationError(false, map.getCenter());
       }
 
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-          'Error: The Geolocation service failed.' :
-          'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.setContent(
+          browserHasGeolocation
+            ? 'Error: The Geolocation service failed.'
+            : 'Error: Your browser doesn\'t support geolocation'
+        );
         infoWindow.open(map);
-
       }
 
       function createMarker(shop) {
@@ -66,15 +69,21 @@ function googleMap($window, $timeout) {
         marker.addListener('click', () => {
           infowindow = new $window.google.maps.InfoWindow({
             content: `
-            <div class="infowindow">
-              <h3>${shop.name}</h3>
-              <p><strong>Needed: ${shop.clothesWanted}</strong></p>
-              <p><strong>Not needed: ${shop.clothesNotWanted}</strong></p>
-            </div>`
+              <div class="infowindow">
+                <h3 class="card-title bold">${shop.name}</h3>
+                <p class="view-shop"><strong>Address: ${
+  shop.formatted_address
+}</strong></p>
+                <p class="view-shop"><strong>Needed: ${
+  shop.clothesWanted
+}</strong></p>
+                <p class="view-shop"><strong>Not needed: ${
+  shop.clothesNotWanted
+}</strong></p>
+              </div>`
           });
 
           createInfoWindow(marker, shop);
-          // getLngLat(shop);
         });
       }
 
@@ -83,13 +92,12 @@ function googleMap($window, $timeout) {
       function createInfoWindow(marker) {
         console.log('im hit');
 
-        if(currWindow) currWindow.close();
+        if (currWindow) currWindow.close();
 
         currWindow = infowindow;
 
         infowindow.open(map, marker);
       }
-
     }
   };
 }

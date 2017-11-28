@@ -1,34 +1,37 @@
-<h1>All the Shops</h1>
+<div class="index">
+  <google-map shops="vm.shops" class="main-card map"></google-map>
 
-<div class="wrapper">
-  <header class="l-box">
-    <input type="text" id="findShop" class="search" ng-model="vm.q" placeholder="Search...">
-  </header>
-</div>
+  <div class="map-nav">
+    <div class="find">
+      <p class="find-charity">Find A Charity Shop</p>
+    </div>
+    <div class="wrapper">
+      <header class="l-box">
+        <input type="text" id="findShop" class="search" ng-model="vm.q" placeholder="Search...">
+      </header>
+    </div>
 
-<div class="row" ng-if="!vm.q">
-  <div class="col-md-4" ng-repeat="shop in vm.shops">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4 class="card-title">{{ shop.name }}</h4>
+    <div class="shop-search">
+      <div ng-repeat="shop in vm.shops" ng-hide="vm.q">
+        <div class="shop-card">
+          <div class="card-body">
+            <h4 class="card-title bold">{{ shop.name }}</h4>
+            <p ui-sref="shopShow({ id: shop._id })" class="underline">View this shop</p>
+          </div>
+        </div>
+      </div>
+      <div ng-repeat="shop in vm.filtered" ng-hide="!vm.q">
+        <div class="shop-card">
+          <div class="card-body">
+            <h4 class="card-title bold">{{ shop.name }}</h4>
+            <h5 class="view-shop">{{ shop.formatted_address }}</h5>
+            <h5 class="view-shop">{{ shop.city }}</h5>
+            <h5 class="view-shop">{{ shop.email }}</h5>
+            <h5 class="view-shop">{{ shop.international_phone_number}}</h5>
+            <p ui-sref="shopShow({ id: shop._id })" class="underline">View this shop</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-4" ng-repeat="shop in vm.filtered">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
-        <h4 class="card-title">{{ shop.name }}</h4>
-        <h3>{{ shop.formatted_address }}</h3>
-        <h5>{{ shop.city }}</h5>
-        <h5>{{ shop.email }}</h5>
-        <h5>{{ shop.international_phone_number}}</h5>
-        <p ui-sref="shopShow({ id: shop._id })">View this shop</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <google-map shops="vm.shops"></google-map>

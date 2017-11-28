@@ -1,9 +1,18 @@
 <div class="home-wrapper">
-  <div class="login home" ui-sref="login">Login</div>
-  <!-- <div class="logo">
-    <img class="charity-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/4060-200.png">
-  </div> -->
-  <div class="register home" ui-sref="register">Register</div>
+  <div class="login home" ui-sref="login" ng-if="vm.user == null">Login</div>
+  <div class="register home" ui-sref="register" ng-if="!vm.user">Register</div>
+  <h1 class="welcome">Welcome to CharityApp</h1>
+  <h3 class="tag-line">Your online charity shop</h3>
+</div>
 
-<h1 class="welcome">Welcome to CharityApp</h1>
+<div class="banner">
+</div>
+
+<div class="icon-footer">
+  <ul class="icon-list">
+    <li class="icon"><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
+    <li class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></li>
+    <li class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></li>
+    <li class="icon"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+  </ul>
 </div>

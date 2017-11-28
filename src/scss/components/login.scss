@@ -1,0 +1,45 @@
+.background {
+  background-image: url('../images/login_background.jpg');
+  background-size: 60%;
+  background-repeat: repeat;
+  height: 650px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.login-form {
+  background-color: #ffffff;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  color: #434441;
+  font-family: 'GT Walsheim';
+  font-size: 17px;
+  margin: 30px auto;
+  padding:40px 50px 110px 50px;
+  width: 50%;
+}
+
+.login-title {
+  color: #434441;
+  font-family: 'GT Walsheim';
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+}
+
+.boton {
+  background: #434441;
+  border: 1px solid #434441;
+  color: #ffffff;
+  margin-left: 0;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+input {
+  box-shadow: none;
+  width: 100%;
+};

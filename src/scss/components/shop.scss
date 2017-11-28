@@ -1,0 +1,59 @@
+.shopWants {
+  float: left;
+  position: absolute;
+  top: 65vh;
+  margin: 20px 20px 20px 100px;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  background-color: white;
+  width: 400px;
+  padding: 12.5px;
+}
+
+.edit-delete {
+  background-color: #434441;
+  border: none;
+  bottom: 0;
+  font-family: 'GT Walsheim';
+  font-size: 20px;
+  font-weight: normal;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  .btn {
+    background-color: #434441;
+    color: white;
+    border-style: none;
+  }
+}
+
+.comment-form {
+  background-color: white;
+  border: 3px solid #434441;
+  box-shadow: 7px 7px 0px #dcc3da;
+  float: right;
+  height: 147px;
+  margin-right: 100px;
+  padding: 12.5px;
+  top: 63vh;
+  width: 400px;
+}
+
+.com-sub {
+  height: 30px;
+  width: 150px;
+}
+
+.x {
+  color: #434441;
+  font-weight: bold;
+}
+
+.icon-shop {
+  border: 3px solid #434441;
+  float: right;
+  margin: 25px;
+  position: relative;
+  width: 200px;
+}

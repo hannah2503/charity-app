@@ -1,22 +1,32 @@
-<h1>Edit your profile</h1>
+<div class="background">
+  <h1 class="edit-title">{{vm.title}}</h1>
+  <div class="editUserPage">
+    <form ng-submit="vm.submit(vm.user)">
 
-<form ng-submit="vm.submit(vm.user)">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" name="username" ng-model="vm.user.username" class="form-control">
-  </div>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" ng-model="vm.user.username">
+      </div>
 
-  <div class="form-group">
-    <label for="userType">User Type</label>
-    <input type="text" name="userType" ng-model="vm.user.userType" class="form-control">
-  </div>
+      <div>
+        <label for="userType">User Type</label>
+        <input type="text" name="userType" ng-model="vm.user.userType">
+      </div>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" name="email" ng-model="vm.user.email" class="form-control">
-  </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" ng-model="vm.user.email">
+      </div>
 
-  <div class="form-group">
-    <input type="submit" value="Submit" class="btn btn-success">
+      <div>
+        <label for="image">Image</label>
+        <input type="text" name="email" ng-model="vm.user.image">
+      </div>
+
+      <div>
+        <button class="boton addBtn" type="submit">{{vm.title}}</button>
+      </div>
+
+    </form>
   </div>
-</form>
+</div>

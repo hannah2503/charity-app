@@ -1,0 +1,81 @@
+.map {
+    border-width: 0px;
+    height: 100vh;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+
+.map-nav {
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+}
+
+.find {
+  background-color: white;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  color: #434441;
+  height: 70px;
+  font-family: 'GT Walsheim';
+  font-size: 27px;
+  font-weight: 600;
+  font-weight: 800;
+  line-height: 70px;
+  margin: 30px 50px 30px 15px;
+  margin: 30px 50px 50px 50px;
+  text-align: center;
+  width: 180px;
+  width: 300px;
+}
+
+.index {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.underline {
+  font-family: 'amerigo bt';
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.shop-search {
+  background-color: white;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  display: inline;
+  display: block!important;
+  height:390px;
+  overflow:hidden;
+  overflow-y: scroll;
+  margin: 30px 50px 50px 50px;
+  position: relative;
+  width: 300px;
+  z-index: 2;
+}
+
+.search {
+  border: 1px none white;
+  color: black;
+  display: block!important;
+  font-family: 'amerigo bt';
+  font-style: italic;
+  font-size: 20px;
+  height: 35px;
+  line-height: 35px;
+  margin: 30px 50px 40px 50px;
+  position: relative;
+  width: 300px;
+}

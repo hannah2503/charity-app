@@ -1,0 +1,113 @@
+.welcome {
+  color: #434441;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'GT Walsheim';
+  margin: 50px 0 30px 0;
+}
+
+.home-wrapper {
+  font-family: 'GT Walsheim';
+  font-size: 22px;
+  line-height: 50px;
+  left: 50%;
+  margin: 70px auto;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 30%;
+  width: 600px;
+}
+
+.login {
+  background-color: white;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  color: #434441;
+  display: inline-block;
+  float:left;
+  font-weight: 600;
+  height: 70px;
+  line-height: 62px;
+  width: 180px;
+}
+
+.login, .register {
+  font-size: 40px;
+}
+
+.home {
+  transition-property: color background-color;
+  transition-duration: 0.2s;
+}
+
+.home:hover {
+  color: white;
+  background-color: #dcc3da;
+  border: 3px solid #dcc3da;
+}
+
+.register:hover {
+  box-shadow: 0px 0px 0px #434441;
+}
+.login:hover {
+  box-shadow: 0px 0px 0px #434441;
+}
+
+.register {
+  background-color: white;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: -7px 7px 0px #dcc3da;
+  color: #434441;
+  display: inline-block;
+  float: right;
+  font-weight: 600;
+  height: 70px;
+  line-height: 62px;
+  transition-duration: 0.4s;
+  width: 180px;
+}
+
+.tag-line {
+  color: #434441;
+  font-family: 'amerigo bt';
+  margin: 30px auto;
+}
+
+.banner {
+  background-image: url('../images/donate-illustration.png');
+  background-repeat: repeat-x;
+  background-size: 80%;
+  display: inline-block;
+  height: 180px;
+  margin-top: 430px;
+  width: 100%;
+}
+
+.icon-footer {
+  color: #434441;
+  display: flex;
+  float: none;
+  font-size: 30px;
+  letter-spacing: 4px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.icon {
+  align-items: center;
+  float: left;
+  line-height: 20px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.icon-list {
+  margin: auto;
+  padding: 0px !important;
+}

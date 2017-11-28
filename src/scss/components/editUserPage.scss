@@ -1,0 +1,51 @@
+.background {
+  background-image: url('../images/login_background.jpg');
+  background-repeat: repeat;
+  background-size: 60%;
+  height: 850px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.edit-title {
+  color: #434441;
+  font-family: 'GT Walsheim';
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+}
+
+.editUserPage {
+  background-color: #ffffff;
+  border: 3px solid #434441;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px #dcc3da;
+  color: #434441;
+  font-family: 'GT Walsheim';
+  font-size: 17px;
+  margin: 30px auto;
+  padding:40px 50px 110px 50px;
+  width: 50%;
+  input {
+    margin: 2px;
+    padding: 5px;
+    width: 100%;
+  }
+  label {
+    border-radius: 5px;
+    margin: 2px;
+    padding: 5px;
+    width: 100%;
+  }
+  .addBtn {
+    float: left;
+    margin: 15px auto;
+    .boton {
+      border: 1px solid #434441;
+      color: black;
+      margin: 2px;
+      width: 100%;
+    }
+  }
+}

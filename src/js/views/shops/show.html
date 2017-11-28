@@ -1,35 +1,54 @@
-<h1>One Shop</h1>
+<div class="background">
 
-{{ vm.shop }}
-
-Icon: <img src="{{vm.details.icon}}">
-
-<p>Shop Name: {{ vm.shop.name }}</p>
-<p>Created By: {{ vm.shop.createdBy.username }}</p>
-<p>Address: {{vm.shop.formatted_address}}</p>
-<p>Email: {{ vm.shop.email }}</p>
-<p>Telephone Number: {{vm.shop.international_phone_number}}</p>
-<p>Bio: {{vm.shop.bio}}</p>
-<p>Items Needed for Sale: {{vm.shop.clothesWanted}}</p>
-<p>Items not sold at this shop: {{vm.shop.clothesNotWanted}}</p>
-
-<button ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button>
-<button ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
-<hr>
-<h3>Comments:</h3>
-
-<ul>
-  <li ng-repeat="comment in vm.shop.comments track by $index">
-    <p>Content: {{ comment.content }}</p>
-    <p>Created By: {{ comment.createdBy.username }}</p>
-    <div ng-if="comment.createdBy._id === vm.currentUserId">
-      <button ng-click="vm.commentDelete(comment._id)">Delete the comment</button>
+  <div class="col-md-4">
+    <div class="card main-card">
+      <div class="card-body">
+      <img class="icon-shop" src="{{vm.shop.icon}}">
+      <h3 class="card-title bold">Shop Info</h3>
+      <p class="card-title bold">Shop: {{ vm.shop.name }}</p>
+      <p class="card-text">About: {{vm.shop.bio}}</p>
+      <p class="card-text">Address: {{vm.shop.formatted_address}}</p>
+      <p class="card-text">Telephone Number: {{vm.shop.international_phone_number}}</p>
+      <p class="card-text">Email: {{ vm.shop.email }}</p>
+    <div class="edit-delete">
+      <button class="btn prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ui-sref="shopEdit({id: vm.shop._id})"> Edit this Shop</button>
+      <button class="btn prof" ng-if="vm.shop.createdBy._id === vm.currentUserId" ng-click="vm.delete(vm.shop)">Delete this Shop</button>
     </div>
-  </li>
-</ul>
 
-<form ng-submit="vm.handleNewComment()">
-  <label for="comments">Add a Comment:</label>
-  <input type="text" ng-model="vm.comment.content">
-  <input type="submit">
+    </div>
+
+  </div>
+  <div class="shopWants">
+    <h3>How You Can Help</h3>
+    <p><strong>We need more: </strong>{{vm.shop.clothesWanted}}</p>
+    <p><strong>We have too many: </strong>{{vm.shop.clothesNotWanted}}</p>
+  </div>
+
+</div>
+
+  <div class="wrap-card">
+    <div class="shop-card">
+      <div class="card-body">
+        <h3 class="card-title bold">Comments</h3>
+        <ul>
+          <li ng-repeat="comment in vm.shop.comments | orderBy: '-'">
+            <p  class="view-shop">{{ comment.content }}</p>
+            <div >
+              <p  class="view-shop">Said {{ comment.createdBy.username }}
+                <button class="x" ng-if="comment.createdBy._id === vm.currentUserId" ng-click="vm.commentDelete(comment._id)">x</button>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<form class="comment-form" ng-submit="vm.handleNewComment()">
+  <label class="add-comment" for="comments">Add Comment:</label>
+  <br>
+  <input type="text" class="comment com-sub" ng-model="vm.comment.content">
+  <input type="submit" class="com-sub">
 </form>
+
+</div>
