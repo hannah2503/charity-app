@@ -67,4 +67,15 @@ A further benefit of group work was that it allowed each of us time to tackle pr
 </p>
 
 <h2>Snapshots</h2>
-TBC...
+Testing:
+![](one.png)
+Planning:
+![](planning.jpg)
+![](planning2.jpg)
+![](two.png)
+Design:
+![](three.png)
+![](four.png)
+
+Presentation:
+<a href="Charity App Presentation.pptx">Presentation</a>
