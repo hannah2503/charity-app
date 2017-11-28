@@ -9,7 +9,10 @@ function shopEditController(Shop, $stateParams, $state){
   const vm = this;
   vm.title = 'Edit this Shop';
   vm.shop = Shop.get($stateParams);
-  vm.submit = shop => {
+
+  vm.submit = updateShop;
+
+  function updateShop(shop) {
     Shop
       .update({id: shop._id}, shop)
       .$promise
@@ -17,5 +20,5 @@ function shopEditController(Shop, $stateParams, $state){
 
         $state.go('shopShow', {id: shop._id});
       });
-  };
+  }
 }
