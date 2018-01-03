@@ -65,17 +65,3 @@ We also learned a great deal about the GIT process and emulated how we might hav
 
 A further benefit of group work was that it allowed each of us time to tackle problems we might not have time to do on out own.
 </p>
-
-<h2>Snapshots</h2>
-Testing:
-![](one.png)
-Planning:
-![](planning.jpg)
-![](planning2.jpg)
-![](two.png)
-Design:
-![](screen1.png)
-![](screen2.png)
-![](screen3.png)
-![](screen4.png)
-![](screen5.png)
