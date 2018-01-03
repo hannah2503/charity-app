@@ -79,6 +79,3 @@ Design:
 ![](screen3.png)
 ![](screen4.png)
 ![](screen5.png)
-
-Presentation:
-<a href="Charity App Presentation.pptx">Presentation</a>
