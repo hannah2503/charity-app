@@ -2,20 +2,10 @@
   "name": "wdi-project-3",
   "description": "group project",
   "main": "index.js",
-  "authors": [
-    "Catriona O'Dwyer",
-    "Hannah Cross",
-    "Cameron Jones"
-  ],
+  "authors": ["Catriona O'Dwyer", "Hannah Cross", "Cameron Jones"],
   "license": "ISC",
   "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "angular": "^1.6.6",
     "angular-resource": "^1.6.4",
@@ -27,6 +17,6 @@
     "angular-animate": "^1.6.3"
   },
   "resolutions": {
-    "angular": "1.6.6"
+    "angular": "^1.6.6"
   }
 }
