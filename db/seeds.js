@@ -18,8 +18,7 @@ User.create([
     email: 'cam@cam.com',
     password: 'password',
     passwordConfirmation: 'password',
-    image:
-      'http://i.dailymail.co.uk/i/pix/2017/03/05/10/0018F2E600000258-0-image-a-55_1488709297836.jpg'
+    image: 'http://i.dailymail.co.uk/i/pix/2017/03/05/10/0018F2E600000258-0-image-a-55_1488709297836.jpg'
   },
   {
     userType: 'Donor',
@@ -28,7 +27,7 @@ User.create([
     password: 'password',
     passwordConfirmation: 'password',
     image:
-      'http://www.licensingsource.net/wp-content/uploads/2017/03/MiffyBalloon.jpg'
+    'http://www.licensingsource.net/wp-content/uploads/2017/03/MiffyBalloon.jpg'
   },
   {
     userType: 'Shop Owner',
